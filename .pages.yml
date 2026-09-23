@@ -23,6 +23,15 @@ content:
       - {name: address, label: Volledig adres, type: string, required: true}
       - {name: kvk, label: KvK, type: string}
       - {name: noEroticText, label: Dienstmelding, type: text}
+      - name: socials
+        label: Social & online links
+        type: object
+        list:
+          collapsible: {collapsed: true, summary: "{label}"}
+        fields:
+          - {name: label, label: Naam knop, type: string}
+          - {name: url, label: Link, type: string}
+          - {name: kind, label: Type, type: string}
       - name: hero
         label: Hero
         type: object
@@ -99,7 +108,12 @@ content:
       - {name: id, label: Technische ID, type: string, readonly: true}
       - {name: name, label: Naam, type: string, required: true}
       - {name: shortName, label: Korte naam prijstabel, type: string}
-      - {name: description, label: Omschrijving, type: text}
+      - {name: typeLabel, label: Type behandeling, type: string}
+      - {name: teaser, label: Korte kaarttekst, type: text}
+      - {name: description, label: Uitgebreide uitleg, type: text}
+      - {name: bestFor, label: Past vooral bij, type: text}
+      - {name: intensity, label: Intensiteit, type: string}
+      - {name: oilLabel, label: Olie / werkwijze, type: string}
       - {name: image, label: Foto, type: image, options: {media: images}}
       - {name: imageAlt, label: Alt-tekst, type: string}
       - {name: active, label: Tonen op website, type: boolean}
