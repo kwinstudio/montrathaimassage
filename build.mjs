@@ -131,12 +131,12 @@ const html = `<!doctype html>
     </section>
 
     <section class="section section-pad" id="behandelingen">
-      <div class="section-heading split-heading"><div><span class="eyebrow">Behandelingen</span><h2>Zeven behandelingen. Elk met een ander doel.</h2></div><p>Bekijk eerst het type, de intensiteit en vanafprijs. Tik op een behandeling voor de volledige uitleg en alle beschikbare tijden.</p></div>
+      <div class="section-heading"><span class="eyebrow">Behandelingen</span><h2>Zeven behandelingen. Elk met een ander doel.</h2></div>
       <div class="treatment-grid">${treatmentCards}</div>
     </section>
 
     <section class="choice-section section-pad" id="keuzehulp">
-      <div class="choice-copy"><span class="eyebrow">Persoonlijke massagekeuze</span><h2>In vijf vragen naar jouw beste match.</h2><p>We kijken naar je doel, lichaamszone, gewenste druk, olievoorkeur en situatie van vandaag. Daarna krijg je één duidelijke behandeling als beste match. Dit is geen medische diagnose.</p></div>
+      <div class="choice-copy"><span class="eyebrow">Persoonlijke massagekeuze</span><h2>In vijf vragen naar jouw beste match.</h2><p>Beantwoord vijf korte vragen en ontdek welke behandeling het beste bij je voorkeuren past. Geen medische diagnose.</p></div>
       <div class="choice-card" data-choice-helper>
         <div class="choice-progress"><span>Vraag <b data-step>1</b> van 5</span><div><i data-progress></i></div></div>
         <div data-choice-content></div>
@@ -147,12 +147,41 @@ const html = `<!doctype html>
       <div class="section-heading"><span class="eyebrow">Prijzen</span><h2>Alles in één oogopslag.</h2><p>De onderstaande tarieven zijn overgenomen uit de actuele prijslijst van Montra Thai Massage.</p></div>
       <div class="price-table-wrap"><table class="price-table"><thead><tr><th>Behandeling</th><th>30 min</th><th>60 min</th><th>90 min</th><th>120 min</th></tr></thead><tbody>${priceRows}</tbody></table></div>
       <div class="packages-grid">${packageCards}</div>
-      <div class="passes-note"><strong>Strippenkaart & cadeaubon</strong><span>10× 60 minuten € 585 · 5× 60 minuten € 300 · 12 maanden geldig</span></div>
+      <section class="passes-feature" aria-label="Strippenkaart en cadeaubon">
+        <div class="passes-feature-copy">
+          <span class="eyebrow">Vaker ontspannen</span>
+          <h3>Strippenkaart & cadeaubon</h3>
+          <p>Voor wie vaker terugkomt of iemand een massage cadeau wil doen.</p>
+        </div>
+        <div class="passes-options">
+          <div><span>10 behandelingen</span><strong>10× 60 min · € 585</strong></div>
+          <div><span>5 behandelingen</span><strong>5× 60 min · € 300</strong></div>
+          <div><span>Geldigheid</span><strong>12 maanden</strong></div>
+        </div>
+        <a class="button button-primary passes-cta" href="https://wa.me/${site.phoneInternational}" target="_blank" rel="noopener">Vraag ernaar via WhatsApp</a>
+      </section>
     </section>
 
     <section class="trust-section section-pad" id="over">
       <div class="trust-media"><img src="${esc(site.trust.image)}" alt="${esc(site.trust.imageAlt)}" loading="lazy" decoding="async"></div>
-      <div class="trust-copy"><span class="eyebrow">Over Montra</span><h2>${esc(site.trust.title)}</h2><p>${esc(site.trust.text)}</p><div class="trust-points"><div><strong>Authentieke technieken</strong><span>Traditionele Thaise massage gecombineerd met persoonlijke aandacht.</span></div><div><strong>Rustige setting</strong><span>Een professionele behandeling met respect voor jouw grenzen en comfort.</span></div><div><strong>Gerichte keuze</strong><span>Van ontspannende olie tot stevige deep tissue en sportmassage.</span></div></div></div>
+      <div class="trust-copy">
+        <span class="eyebrow">Over Montra</span>
+        <h2>${esc(site.trust.title)}</h2>
+        <div class="trust-story">
+          <p class="trust-intro">${esc(site.trust.text)}</p>
+          <p>${esc(site.trust.secondaryText || '')}</p>
+          <p>${esc(site.trust.closingText || '')}</p>
+        </div>
+        <div class="trust-points">
+          <div><span class="trust-number">01</span><strong>Authentieke technieken</strong><span>Traditionele Thaise technieken vormen de basis, met aandacht voor jouw persoonlijke voorkeuren.</span></div>
+          <div><span class="trust-number">02</span><strong>Rustige setting</strong><span>Een professionele behandeling in een rustige omgeving, met respect voor jouw grenzen en comfort.</span></div>
+          <div><span class="trust-number">03</span><strong>Van ontspanning tot stevig</strong><span>Kies bijvoorbeeld voor Thai Oil, Traditional Thai, Deep Tissue, sportmassage of een gerichte behandeling.</span></div>
+        </div>
+        <div class="trust-actions">
+          <a class="button button-primary" href="#behandelingen">Bekijk behandelingen</a>
+          <a class="text-link js-start-choice" href="#keuzehulp">Help mij kiezen →</a>
+        </div>
+      </div>
     </section>
 
     <section class="gallery-section section-pad"><div class="section-heading"><span class="eyebrow">Sfeer</span><h2>Een rustige indruk van Montra.</h2></div><div class="gallery-grid">${gallery}</div></section>
