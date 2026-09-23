@@ -115,7 +115,7 @@ const html = `<!doctype html>
           <span>Waar heb je nu vooral behoefte aan?</span>
           <div>
             <button data-hero-choice="relax">Ontspannen</button>
-            <button data-hero-choice="firm">Vastzittende spieren</button>
+            <button data-hero-choice="muscles">Vastzittende spieren</button>
             <button data-hero-choice="upper">Nek, rug & schouders</button>
             <button data-hero-choice="help">Help mij kiezen</button>
           </div>
