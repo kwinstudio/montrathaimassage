@@ -5,6 +5,7 @@ const root = process.cwd();
 const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
 const esc = (v='') => String(v).replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));
 const euro = (n) => `€ ${Number(n).toFixed(0)}`;
+const absoluteUrl = (v) => /^https?:\/\//i.test(v) ? v : new URL(v, site.seo.canonical).href;
 
 const site = read('data/site.json');
 const treatments = read('data/treatments.json').filter(t => t.active);
@@ -43,7 +44,7 @@ const schema = {
   url: site.seo.canonical,
   telephone: `+${site.phoneInternational}`,
   email: site.email,
-  image: site.hero.image,
+  image: absoluteUrl(site.hero.image),
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Stephensonstraat 2D',
@@ -75,7 +76,7 @@ const html = `<!doctype html>
   <meta property="og:title" content="${esc(site.seo.title)}">
   <meta property="og:description" content="${esc(site.seo.description)}">
   <meta property="og:url" content="${esc(site.seo.canonical)}">
-  <meta property="og:image" content="${esc(site.hero.image)}">
+  <meta property="og:image" content="${esc(absoluteUrl(site.hero.image))}">
   <meta name="theme-color" content="#5f315f">
   <link rel="preconnect" href="https://montrathaimassage.nl">
   <link rel="stylesheet" href="/assets/site.css">
