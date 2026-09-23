@@ -198,10 +198,6 @@ const html = `<!doctype html>
           <div><span class="trust-number">02</span><strong>Rustige setting</strong><span>Een professionele behandeling in een rustige omgeving, met respect voor jouw grenzen en comfort.</span></div>
           <div><span class="trust-number">03</span><strong>Van ontspanning tot stevig</strong><span>Van Thai Oil en Traditional Thai tot Deep Tissue, sportmassage en gerichte behandelingen.</span></div>
         </div>
-        <div class="trust-actions">
-          <a class="button button-primary" href="#behandelingen">Bekijk behandelingen</a>
-          <a class="text-link js-start-choice" href="#keuzehulp">Help mij kiezen →</a>
-        </div>
       </div>
     </section>
 
