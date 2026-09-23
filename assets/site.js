@@ -5,6 +5,15 @@
   const qsa = (s, root=document) => [...root.querySelectorAll(s)];
   const euro = n => `€ ${Number(n).toFixed(0)}`;
 
+  const stickyCta = qs('.mobile-sticky');
+  const updateStickyCta = () => {
+    if (!stickyCta) return;
+    stickyCta.classList.toggle('is-visible', window.scrollY > Math.max(420, window.innerHeight * .65));
+  };
+  window.addEventListener('scroll', updateStickyCta, {passive:true});
+  window.addEventListener('resize', updateStickyCta);
+  updateStickyCta();
+
   const menuButton = qs('.menu-toggle');
   const mobileMenu = qs('#mobile-menu');
   menuButton?.addEventListener('click', () => {
