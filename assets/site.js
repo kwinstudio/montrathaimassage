@@ -206,7 +206,7 @@
     const q=questions[step];
     stepEl.textContent=String(step+1);
     progress.style.width=`${((step+1)/questions.length)*100}%`;
-    helperContent.innerHTML=`<div class="choice-question"><span class="choice-kicker">Kies wat het beste voelt — er is geen fout antwoord.</span><h3>${q.title}</h3><div class="choice-options">${q.options.map(([v,l,s])=>`<button type="button" class="choice-option" data-value="${v}"><strong>${l}</strong><span>${s}</span></button>`).join('')}</div></div>`;
+    helperContent.innerHTML=`<div class="choice-question"><h3>${q.title}</h3><div class="choice-options">${q.options.map(([v,l,s])=>`<button type="button" class="choice-option" data-value="${v}"><strong>${l}</strong><span>${s}</span></button>`).join('')}</div></div>`;
     qsa('.choice-option',helperContent).forEach(btn=>btn.addEventListener('click',()=>{
       answers[q.key]=btn.dataset.value;
       step++;
