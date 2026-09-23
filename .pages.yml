@@ -48,7 +48,9 @@ content:
         type: object
         fields:
           - {name: title, label: Titel, type: string}
-          - {name: text, label: Tekst, type: text}
+          - {name: text, label: Introductie, type: text}
+          - {name: secondaryText, label: Tweede alinea, type: text}
+          - {name: closingText, label: Afsluitende alinea, type: text}
           - {name: image, label: Foto Ratree, type: image, options: {media: images}}
           - {name: imageAlt, label: Alt-tekst, type: string}
       - name: reviews
