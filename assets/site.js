@@ -16,6 +16,7 @@
 
   const bookingModal = qs('#booking-modal');
   const legalModal = qs('#legal-modal');
+  const treatmentModal = qs('#treatment-modal');
   const treatmentSelect = qs('#booking-treatment');
   const durationSelect = qs('#booking-duration');
   const dateInput = qs('#booking-date');
@@ -86,8 +87,8 @@
   qsa('.js-book').forEach(btn => btn.addEventListener('click', () => openBooking(btn.dataset.treatment || '')));
   qsa('.js-package-book').forEach(btn => btn.addEventListener('click', () => openBooking(`package:${btn.dataset.package}`)));
   qsa('[data-close]').forEach(btn => btn.addEventListener('click', () => { btn.closest('dialog')?.close(); document.body.classList.remove('modal-open'); }));
-  [bookingModal, legalModal].forEach(d => d.addEventListener('click', e => { if(e.target === d){ d.close(); document.body.classList.remove('modal-open'); }}));
-  [bookingModal, legalModal].forEach(d => d.addEventListener('close', () => document.body.classList.remove('modal-open')));
+  [bookingModal, legalModal, treatmentModal].forEach(d => d.addEventListener('click', e => { if(e.target === d){ d.close(); document.body.classList.remove('modal-open'); }}));
+  [bookingModal, legalModal, treatmentModal].forEach(d => d.addEventListener('close', () => document.body.classList.remove('modal-open')));
 
   qs('#booking-form').addEventListener('submit', e => {
     e.preventDefault(); status.textContent = '';
@@ -101,6 +102,33 @@
     if (noteInput.value.trim()) lines.push(`Opmerking: ${noteInput.value.trim()}`);
     lines.push('',site.booking.whatsappOutro);
     window.open(`https://wa.me/${site.phoneInternational}?text=${encodeURIComponent(lines.join('\n'))}`,'_blank','noopener');
+  });
+
+  function openTreatmentDetail(id){
+    const t = activeTreatments.find(x => x.id === id);
+    if (!t) return;
+    const image = qs('#treatment-detail-image');
+    image.src = t.image;
+    image.alt = t.imageAlt || t.name;
+    qs('#treatment-detail-type').textContent = t.typeLabel || 'Behandeling';
+    qs('#treatment-detail-title').textContent = t.name;
+    qs('#treatment-detail-description').textContent = t.description;
+    qs('#treatment-detail-best').textContent = t.bestFor || '';
+    qs('#treatment-detail-facts').innerHTML = `<span><b>Intensiteit</b>${t.intensity || 'Afgestemd'}</span><span><b>Olie</b>${t.oilLabel || 'In overleg'}</span>`;
+    qs('#treatment-detail-prices').innerHTML = t.durations?.length
+      ? t.durations.map(d => `<span><b>${d.minutes} min</b>${euro(d.price)}</span>`).join('')
+      : '<span><b>Duur & tarief</b>In overleg</span>';
+    const book = qs('#treatment-detail-book');
+    book.dataset.treatment = t.id;
+    treatmentModal.showModal();
+    document.body.classList.add('modal-open');
+  }
+
+  qsa('.js-treatment-detail').forEach(btn => btn.addEventListener('click', () => openTreatmentDetail(btn.dataset.treatment)));
+  qs('#treatment-detail-book')?.addEventListener('click', (e) => {
+    const id = e.currentTarget.dataset.treatment;
+    treatmentModal.close();
+    openBooking(id);
   });
 
   qsa('[data-legal]').forEach(btn => btn.addEventListener('click', () => {
@@ -122,30 +150,133 @@
   const progress = qs('[data-progress]', helper);
   const answers = {};
   const questions = [
-    {key:'goal', title:'Waar heb je vooral behoefte aan?', options:[['relax','Rust en ontspanning'],['firm','Stevigere spierbehandeling'],['traditional','Traditionele Thaise technieken'],['upper','Nek, rug of schouders'],['head','Hoofd, nek en rust']]},
-    {key:'pressure', title:'Welke druk heeft je voorkeur?', options:[['soft','Zacht tot rustig'],['medium','Gemiddeld'],['firm','Stevig']]},
-    {key:'oil', title:'Heb je een voorkeur voor olie?', options:[['yes','Ja, graag met olie'],['no','Liever zonder olie'],['either','Geen voorkeur']]}
+    {key:'goal', title:'Wat wil je vooral uit de massage halen?', options:[
+      ['relax','Volledig ontspannen','Rust in mijn hoofd en lichaam'],
+      ['muscles','Vastzittende spieren aanpakken','Ik wil duidelijk spierwerk voelen'],
+      ['mobility','Meer ruimte en beweging','Stretching en traditionele technieken'],
+      ['upper','Nek, rug of schouders','Daar zit mijn meeste spanning'],
+      ['head','Hoofd en nek tot rust brengen','Rustige aandacht voor bovenlichaam']
+    ]},
+    {key:'area', title:'Waar wil je vooral aandacht voor?', options:[
+      ['full','Mijn hele lichaam','Een complete behandeling'],
+      ['upper','Nek, rug en schouders','Vooral mijn bovenlichaam'],
+      ['legs','Benen en sportspieren','Na sporten of fysieke belasting'],
+      ['head','Hoofd, nek en schouders','Rustig en gericht'],
+      ['specific','Een specifieke gespannen plek','Gerichte spierbehandeling']
+    ]},
+    {key:'pressure', title:'Hoe stevig mag de massage zijn?', options:[
+      ['soft','Zacht','Ik wil vooral ontspannen'],
+      ['medium','Gemiddeld','Voelbaar maar comfortabel'],
+      ['firm','Stevig','Er mag goed druk worden gezet'],
+      ['intense','Heel stevig','Ik kies bewust voor intensief'],
+      ['either','Geen voorkeur','Ik laat Ratree afstemmen']
+    ]},
+    {key:'oil', title:'Wat vind je prettig qua olie?', options:[
+      ['yes','Graag met olie','Vloeiend en ontspannend'],
+      ['no','Liever zonder olie','Traditioneler of gerichter'],
+      ['either','Maakt mij niet uit','Kies wat het beste past'],
+      ['unsure','Weet ik nog niet','Ik sta open voor advies']
+    ]},
+    {key:'context', title:'Welke situatie past het beste bij vandaag?', options:[
+      ['desk','Veel zitten of kantoorwerk','Spanning bouwt op in mijn bovenlichaam'],
+      ['sport','Sport of fysieke belasting','Mijn spieren hebben veel gedaan'],
+      ['stress','Stress of behoefte aan rust','Ik wil vooral ontprikkelen'],
+      ['traditional','Ik wil echt Thaise technieken ervaren','Drukpunten en stretching spreken mij aan'],
+      ['oncology','Tijdens of na een oncologisch traject','Ik wil eerst zorgvuldig afstemmen']
+    ]}
   ];
   let step=0;
+
+  function resetChoice(){
+    step=0;
+    Object.keys(answers).forEach(k=>delete answers[k]);
+    renderQuestion();
+  }
+
   function renderQuestion(){
-    stepEl.textContent=String(step+1); progress.style.width=`${((step+1)/questions.length)*100}%`;
     const q=questions[step];
-    helperContent.innerHTML=`<div class="choice-question"><h3>${q.title}</h3><div class="choice-options">${q.options.map(([v,l])=>`<button type="button" class="choice-option" data-value="${v}">${l}</button>`).join('')}</div></div>`;
-    qsa('.choice-option',helperContent).forEach(btn=>btn.addEventListener('click',()=>{answers[q.key]=btn.dataset.value;step++; step<questions.length?renderQuestion():renderResult();}));
+    stepEl.textContent=String(step+1);
+    progress.style.width=`${((step+1)/questions.length)*100}%`;
+    helperContent.innerHTML=`<div class="choice-question"><span class="choice-kicker">Kies wat het beste voelt — er is geen fout antwoord.</span><h3>${q.title}</h3><div class="choice-options">${q.options.map(([v,l,s])=>`<button type="button" class="choice-option" data-value="${v}"><strong>${l}</strong><span>${s}</span></button>`).join('')}</div></div>`;
+    qsa('.choice-option',helperContent).forEach(btn=>btn.addEventListener('click',()=>{
+      answers[q.key]=btn.dataset.value;
+      step++;
+      step<questions.length?renderQuestion():renderResult();
+    }));
   }
+
   function chooseResult(){
-    const byId = id => activeTreatments.find(t=>t.id===id);
-    if(answers.goal==='head') return byId('migraine');
-    if(answers.goal==='upper') return byId('neck-back-shoulders');
-    if(answers.goal==='traditional') return byId('traditional-thai');
-    if(answers.goal==='relax') return answers.oil==='no'?byId('traditional-thai'):byId('thai-oil');
-    if(answers.goal==='firm') return answers.pressure==='firm' ? byId('deep-tissue') : byId('thai-sport');
-    return answers.oil==='yes'?byId('thai-oil'):byId('traditional-thai');
+    const scores = Object.fromEntries(activeTreatments.map(t => [t.id,0]));
+    const add=(id,n)=>{ if(id in scores) scores[id]+=n; };
+    if(answers.context==='oncology') return activeTreatments.find(t=>t.id==='oncology');
+
+    const goalMap={
+      relax:[['thai-oil',6],['migraine',2]],
+      muscles:[['deep-tissue',6],['thai-sport',4]],
+      mobility:[['traditional-thai',7],['thai-sport',2]],
+      upper:[['neck-back-shoulders',7],['deep-tissue',2]],
+      head:[['migraine',7],['neck-back-shoulders',2]]
+    };
+    const areaMap={
+      full:[['thai-oil',3],['traditional-thai',3],['deep-tissue',2]],
+      upper:[['neck-back-shoulders',6],['deep-tissue',2],['migraine',1]],
+      legs:[['thai-sport',6],['deep-tissue',2]],
+      head:[['migraine',7],['neck-back-shoulders',2]],
+      specific:[['deep-tissue',4],['neck-back-shoulders',3],['thai-sport',2]]
+    };
+    const pressureMap={
+      soft:[['thai-oil',4],['migraine',4]],
+      medium:[['traditional-thai',4],['neck-back-shoulders',3],['thai-oil',2]],
+      firm:[['deep-tissue',5],['thai-sport',4],['traditional-thai',2]],
+      intense:[['deep-tissue',7],['thai-sport',4]],
+      either:[]
+    };
+    const oilMap={
+      yes:[['thai-oil',5],['deep-tissue',3]],
+      no:[['traditional-thai',4],['neck-back-shoulders',3],['migraine',2],['thai-sport',2]],
+      either:[],
+      unsure:[['thai-oil',1],['traditional-thai',1]]
+    };
+    const contextMap={
+      desk:[['neck-back-shoulders',6],['deep-tissue',2]],
+      sport:[['thai-sport',7],['deep-tissue',3]],
+      stress:[['thai-oil',6],['migraine',2]],
+      traditional:[['traditional-thai',8]]
+    };
+    [goalMap[answers.goal],areaMap[answers.area],pressureMap[answers.pressure],oilMap[answers.oil],contextMap[answers.context]]
+      .filter(Boolean).flat().forEach(([id,n])=>add(id,n));
+
+    const priority=['thai-oil','neck-back-shoulders','deep-tissue','traditional-thai','thai-sport','migraine','oncology'];
+    return [...activeTreatments].sort((a,b)=>{
+      const diff=(scores[b.id]||0)-(scores[a.id]||0);
+      return diff || priority.indexOf(a.id)-priority.indexOf(b.id);
+    })[0];
   }
+
   function renderResult(){
-    stepEl.textContent='3';progress.style.width='100%'; const t=chooseResult();
-    helperContent.innerHTML=`<div class="choice-result"><span class="eyebrow">Suggestie</span><h3>${t.name}</h3><div class="result-card"><p>${t.description}</p></div><p><small>Dit is alleen een keuzehulp op basis van voorkeuren en geen medisch advies.</small></p><div><button class="button button-primary" id="choice-book">Afspraak aanvragen</button> <button class="button button-ghost" id="choice-restart">Opnieuw kiezen</button></div></div>`;
-    qs('#choice-book').addEventListener('click',()=>openBooking(t.id)); qs('#choice-restart').addEventListener('click',()=>{step=0;Object.keys(answers).forEach(k=>delete answers[k]);renderQuestion();});
+    stepEl.textContent='5';
+    progress.style.width='100%';
+    const t=chooseResult();
+    const special=t.id==='oncology';
+    helperContent.innerHTML=`<div class="choice-result"><span class="eyebrow">${special?'Eerst persoonlijk afstemmen':'Jouw beste match'}</span><h3>${t.name}</h3><div class="result-type">${t.typeLabel || ''}</div><div class="result-card"><p>${t.description}</p><div class="result-facts"><span>${t.intensity || ''}</span><span>${t.oilLabel || ''}</span></div></div><p><small>${special?'Bespreek je situatie eerst met Ratree. Deze keuzehulp geeft geen medisch advies.':'Deze suggestie is gebaseerd op je vijf antwoorden en is geen medische diagnose.'}</small></p><div class="choice-result-actions"><button class="button button-primary" id="choice-book">${special?'Neem contact op':'Afspraak aanvragen'}</button><button class="button button-ghost" id="choice-detail">Bekijk behandeling</button><button class="text-link" id="choice-restart">Opnieuw kiezen</button></div></div>`;
+    qs('#choice-book').addEventListener('click',()=>openBooking(t.id));
+    qs('#choice-detail').addEventListener('click',()=>openTreatmentDetail(t.id));
+    qs('#choice-restart').addEventListener('click',resetChoice);
   }
+
+  function startChoiceFromHero(value){
+    Object.keys(answers).forEach(k=>delete answers[k]);
+    if(value && value!=='help'){
+      answers.goal=value;
+      step=1;
+    }else{
+      step=0;
+    }
+    renderQuestion();
+    qs('#keuzehulp')?.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  qsa('[data-hero-choice]').forEach(btn=>btn.addEventListener('click',()=>startChoiceFromHero(btn.dataset.heroChoice)));
+  qsa('.js-start-choice').forEach(link=>link.addEventListener('click',()=>{ if(step>=questions.length) resetChoice(); }));
   renderQuestion();
 })();
