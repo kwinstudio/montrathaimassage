@@ -164,35 +164,31 @@
       ['relax','Ontspannen',''],
       ['muscles','Spieren losmaken',''],
       ['mobility','Meer bewegen',''],
-      ['upper','Nek, rug & schouders',''],
-      ['head','Hoofd & nek ontspannen','']
+      ['upper','Nek, rug & schouders','']
     ]},
     {key:'area', title:'Waar wil je vooral aandacht voor?', options:[
-      ['full','Mijn hele lichaam','Een complete behandeling'],
-      ['upper','Nek, rug en schouders','Vooral mijn bovenlichaam'],
-      ['legs','Benen en sportspieren','Na sporten of fysieke belasting'],
-      ['head','Hoofd, nek en schouders','Rustig en gericht'],
-      ['specific','Een specifieke gespannen plek','Gerichte spierbehandeling']
+      ['full','Hele lichaam',''],
+      ['upper','Nek, rug & schouders',''],
+      ['legs','Benen & sportspieren',''],
+      ['head','Hoofd & nek','']
     ]},
     {key:'pressure', title:'Hoe stevig mag de massage zijn?', options:[
-      ['soft','Zacht','Ik wil vooral ontspannen'],
-      ['medium','Gemiddeld','Voelbaar maar comfortabel'],
-      ['firm','Stevig','Er mag goed druk worden gezet'],
-      ['intense','Heel stevig','Ik kies bewust voor intensief'],
-      ['either','Geen voorkeur','Ik laat Ratree afstemmen']
+      ['soft','Zacht',''],
+      ['medium','Gemiddeld',''],
+      ['firm','Stevig',''],
+      ['either','Geen voorkeur','']
     ]},
-    {key:'oil', title:'Wat vind je prettig qua olie?', options:[
-      ['yes','Graag met olie','Vloeiend en ontspannend'],
-      ['no','Liever zonder olie','Traditioneler of gerichter'],
-      ['either','Maakt mij niet uit','Kies wat het beste past'],
-      ['unsure','Weet ik nog niet','Ik sta open voor advies']
+    {key:'oil', title:'Heb je voorkeur voor olie?', options:[
+      ['yes','Met olie',''],
+      ['no','Zonder olie',''],
+      ['either','Maakt niet uit',''],
+      ['unsure','Weet ik niet','']
     ]},
-    {key:'context', title:'Welke situatie past het beste bij vandaag?', options:[
-      ['desk','Veel zitten of kantoorwerk','Spanning bouwt op in mijn bovenlichaam'],
-      ['sport','Sport of fysieke belasting','Mijn spieren hebben veel gedaan'],
-      ['stress','Stress of behoefte aan rust','Ik wil vooral ontprikkelen'],
-      ['traditional','Ik wil echt Thaise technieken ervaren','Drukpunten en stretching spreken mij aan'],
-      ['oncology','Tijdens of na een oncologisch traject','Ik wil eerst zorgvuldig afstemmen']
+    {key:'context', title:'Wat past het beste bij vandaag?', options:[
+      ['desk','Veel zitten',''],
+      ['sport','Sport / fysieke belasting',''],
+      ['stress','Stress / behoefte aan rust',''],
+      ['traditional','Thaise technieken ervaren','']
     ]}
   ];
   let step=0;
@@ -218,8 +214,6 @@
   function chooseResult(){
     const scores = Object.fromEntries(activeTreatments.map(t => [t.id,0]));
     const add=(id,n)=>{ if(id in scores) scores[id]+=n; };
-    if(answers.context==='oncology') return activeTreatments.find(t=>t.id==='oncology');
-
     const goalMap={
       relax:[['thai-oil',6],['migraine',2]],
       muscles:[['deep-tissue',6],['thai-sport',4]],
@@ -232,13 +226,11 @@
       upper:[['neck-back-shoulders',6],['deep-tissue',2],['migraine',1]],
       legs:[['thai-sport',6],['deep-tissue',2]],
       head:[['migraine',7],['neck-back-shoulders',2]],
-      specific:[['deep-tissue',4],['neck-back-shoulders',3],['thai-sport',2]]
     };
     const pressureMap={
       soft:[['thai-oil',4],['migraine',4]],
       medium:[['traditional-thai',4],['neck-back-shoulders',3],['thai-oil',2]],
       firm:[['deep-tissue',5],['thai-sport',4],['traditional-thai',2]],
-      intense:[['deep-tissue',7],['thai-sport',4]],
       either:[]
     };
     const oilMap={
