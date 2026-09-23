@@ -13,17 +13,17 @@
     "copy": "Persoonlijke Thaise massage door Ratree, afgestemd op de spanning en ontspanning die jouw lichaam op dat moment nodig heeft.",
     "primaryCta": "Afspraak maken",
     "secondaryCta": "Bekijk behandelingen",
-    "image": "https://montrathaimassage.nl/media/0hongocc/montra2.jpg",
+    "image": "/assets/images/hero.jpg",
     "imageAlt": "Ratree van Montra Thai Massage tijdens een massagebehandeling in Zoetermeer"
   },
   "trust": {
     "title": "Persoonlijk, professioneel en met aandacht.",
     "text": "Ratree is ervaren en gecertificeerd in Thaise massage. Behandelingen worden afgestemd op jouw wensen en worden uitgevoerd in een rustige, respectvolle setting.",
-    "image": "https://montrathaimassage.nl/media/330nud0m/ratree.jpeg",
+    "image": "/assets/images/ratree.jpg",
     "imageAlt": "Ratree, masseuse bij Montra Thai Massage Zoetermeer"
   },
   "reviews": {
-    "rating": 5.0,
+    "rating": 5,
     "count": 30,
     "text": "Bekijk de actuele Google-beoordeling en ervaringen van bezoekers.",
     "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Montra+Thai+Massage+Stephensonstraat+2D+Zoetermeer&query_place_id=ChIJT42taffPxUcRsH1gfRQK1To",
@@ -37,21 +37,81 @@
     "whatsappOutro": "Is dit tijdstip nog beschikbaar? Ik hoor graag of jullie de afspraak kunnen bevestigen."
   },
   "openingHours": [
-    {"day": "Maandag", "dayIndex": 1, "open": false, "from": null, "to": null},
-    {"day": "Dinsdag", "dayIndex": 2, "open": true, "from": "18:00", "to": "20:00"},
-    {"day": "Woensdag", "dayIndex": 3, "open": true, "from": "10:00", "to": "20:00"},
-    {"day": "Donderdag", "dayIndex": 4, "open": true, "from": "18:00", "to": "20:00"},
-    {"day": "Vrijdag", "dayIndex": 5, "open": true, "from": "10:00", "to": "20:00"},
-    {"day": "Zaterdag", "dayIndex": 6, "open": true, "from": "10:00", "to": "20:00"},
-    {"day": "Zondag", "dayIndex": 0, "open": true, "from": "10:00", "to": "19:00"}
+    {
+      "day": "Maandag",
+      "dayIndex": 1,
+      "open": false,
+      "from": null,
+      "to": null
+    },
+    {
+      "day": "Dinsdag",
+      "dayIndex": 2,
+      "open": true,
+      "from": "18:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Woensdag",
+      "dayIndex": 3,
+      "open": true,
+      "from": "10:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Donderdag",
+      "dayIndex": 4,
+      "open": true,
+      "from": "18:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Vrijdag",
+      "dayIndex": 5,
+      "open": true,
+      "from": "10:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Zaterdag",
+      "dayIndex": 6,
+      "open": true,
+      "from": "10:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Zondag",
+      "dayIndex": 0,
+      "open": true,
+      "from": "10:00",
+      "to": "19:00"
+    }
   ],
   "gallery": [
-    {"src": "https://montrathaimassage.nl/media/lombt1my/gallery-01.jpeg", "alt": "Sfeerbeeld van Montra Thai Massage"},
-    {"src": "https://montrathaimassage.nl/media/ggjbveya/gallery-02.jpeg", "alt": "Massageomgeving bij Montra Thai Massage"},
-    {"src": "https://montrathaimassage.nl/media/ahmhfrmh/gallery-03.jpeg", "alt": "Lotusbloem en hot stones als rustgevend sfeerbeeld"},
-    {"src": "https://montrathaimassage.nl/media/5z4gvt4i/gallery-04.jpeg", "alt": "Handdoeken, bloem en stenen in de massagesalon"},
-    {"src": "https://montrathaimassage.nl/media/yddjyzfs/gallery-05.jpeg", "alt": "Sfeerbeeld uit de massagepraktijk"},
-    {"src": "https://montrathaimassage.nl/media/zj0lf33h/gallery-06.jpeg", "alt": "Lotusbloem en hot stones bij Montra Thai Massage"}
+    {
+      "src": "/assets/images/gallery-01.jpg",
+      "alt": "Sfeerbeeld van Montra Thai Massage"
+    },
+    {
+      "src": "/assets/images/gallery-02.jpg",
+      "alt": "Massageomgeving bij Montra Thai Massage"
+    },
+    {
+      "src": "/assets/images/gallery-03.jpg",
+      "alt": "Lotusbloem en hot stones als rustgevend sfeerbeeld"
+    },
+    {
+      "src": "/assets/images/gallery-04.jpg",
+      "alt": "Handdoeken, bloem en stenen in de massagesalon"
+    },
+    {
+      "src": "/assets/images/gallery-05.jpg",
+      "alt": "Sfeerbeeld uit de massagepraktijk"
+    },
+    {
+      "src": "/assets/images/gallery-06.jpg",
+      "alt": "Lotusbloem en hot stones bij Montra Thai Massage"
+    }
   ],
   "seo": {
     "title": "Thaise Massage Zoetermeer | Montra Thai Massage",
