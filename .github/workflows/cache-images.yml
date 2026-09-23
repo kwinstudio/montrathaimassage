@@ -49,3 +49,5 @@ jobs:
           fi
           git commit -m "Cache original Montra salon images"
           git push
+
+# trigger: cache initial production assets
