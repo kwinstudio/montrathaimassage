@@ -1148,3 +1148,90 @@
     height:250px;
   }
 }
+
+
+/* Compact passes UI */
+@media(max-width:700px){
+  .passes-feature{
+    padding:18px 14px;
+    border-radius:14px;
+  }
+  .passes-feature-copy{
+    margin-bottom:14px;
+  }
+  .passes-feature-copy .eyebrow{
+    margin-bottom:6px;
+    font-size:.62rem;
+  }
+  .passes-feature-copy h3{
+    font-size:1.45rem;
+    line-height:1.1;
+    max-width:14ch;
+  }
+
+  .passes-cards{
+    gap:8px;
+  }
+  .pass-card,
+  .pass-card-gift{
+    padding:14px;
+    border-radius:12px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    grid-template-areas:
+      "kicker kicker"
+      "title price"
+      "meta meta"
+      "link link";
+    align-items:start;
+    column-gap:12px;
+    min-height:0;
+  }
+  .pass-kicker{
+    grid-area:kicker;
+    margin-bottom:7px;
+    font-size:.58rem;
+    letter-spacing:.09em;
+  }
+  .pass-card strong{
+    grid-area:title;
+    font-family:Georgia,serif;
+    font-size:1.05rem;
+    line-height:1.15;
+    max-width:none;
+  }
+  .pass-card b{
+    grid-area:price;
+    margin:0;
+    font-size:.9rem;
+    line-height:1.2;
+    text-align:right;
+    white-space:nowrap;
+  }
+  .pass-card small{
+    grid-area:meta;
+    margin-top:6px;
+    font-size:.68rem;
+    line-height:1.35;
+  }
+  .pass-link{
+    grid-area:link;
+    padding-top:10px;
+    font-size:.69rem;
+  }
+
+  .pass-card-gift{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "kicker"
+      "title"
+      "price"
+      "meta"
+      "link";
+  }
+  .pass-card-gift b{
+    text-align:left;
+    margin-top:4px;
+    white-space:normal;
+  }
+}
