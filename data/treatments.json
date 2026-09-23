@@ -3,7 +3,12 @@
     "id": "traditional-thai",
     "name": "Traditional Thai Massage",
     "shortName": "Thai Massage",
-    "description": "Traditionele Thaise drukpunt- en stretchtechnieken, gericht op bewegen, loslaten en ontspanning.",
+    "typeLabel": "Traditioneel · zonder olie",
+    "teaser": "Actief, ritmisch en gericht op drukpunten en stretching.",
+    "description": "Een energieke Thaise behandeling met drukpunttechnieken en stretches. De massage werkt over het hele lichaam en is vooral passend als je houdt van een actieve behandeling zonder olie.",
+    "bestFor": "Voor wie traditionele Thaise technieken, beweging en een stevige maar gecontroleerde behandeling zoekt.",
+    "intensity": "Gemiddeld tot stevig",
+    "oilLabel": "Zonder olie",
     "image": "/assets/images/traditional-thai.jpg",
     "imageAlt": "Traditionele Thaise massage bij Montra Thai Massage Zoetermeer",
     "active": true,
@@ -13,7 +18,7 @@
     "durations": [
       {
         "minutes": 30,
-        "price": 40
+        "price": 35
       },
       {
         "minutes": 60,
@@ -33,7 +38,12 @@
     "id": "thai-oil",
     "name": "Thai Oil Massage",
     "shortName": "Thai Olie Massage",
-    "description": "Ontspannende massage met warme olie en vloeiende technieken voor een rustig en ontspannen gevoel.",
+    "typeLabel": "Ontspanning · warme olie",
+    "teaser": "Vloeiende bewegingen met warme olie voor diepe ontspanning.",
+    "description": "Een ontspannende massage met warme olie en rustige, vloeiende technieken. Gericht op het loslaten van dagelijkse spanning en het creëren van een kalm, ontspannen gevoel.",
+    "bestFor": "Voor wie vooral wil ontspannen en een zachtere, vloeiende massage met olie prettig vindt.",
+    "intensity": "Zacht tot gemiddeld",
+    "oilLabel": "Met warme olie",
     "image": "/assets/images/thai-oil.jpg",
     "imageAlt": "Thaise oliemassage bij Montra Thai Massage Zoetermeer",
     "active": true,
@@ -43,7 +53,7 @@
     "durations": [
       {
         "minutes": 30,
-        "price": 40
+        "price": 35
       },
       {
         "minutes": 60,
@@ -63,7 +73,12 @@
     "id": "thai-sport",
     "name": "Thai Sport Massage",
     "shortName": "Thai Sport Massage",
-    "description": "Stevigere, doelgerichte massage voor wie spieren intensiever wil laten behandelen na inspanning of belasting.",
+    "typeLabel": "Sport · doelgericht",
+    "teaser": "Krachtiger en doelgericht voor zwaar belaste spieren.",
+    "description": "Een krachtige en gerichte behandeling voor spieren die door sport, training of fysieke belasting veel te verduren krijgen. De behandeling is intensiever dan een ontspanningsmassage.",
+    "bestFor": "Voor sporters en actieve mensen die bewust kiezen voor een stevigere, doelgerichte massage.",
+    "intensity": "Stevig",
+    "oilLabel": "Afhankelijk van behandeling",
     "image": "/assets/images/thai-sport.jpg",
     "imageAlt": "Thaise sportmassage in Zoetermeer",
     "active": true,
@@ -73,7 +88,7 @@
     "durations": [
       {
         "minutes": 30,
-        "price": 40
+        "price": 35
       },
       {
         "minutes": 60,
@@ -93,7 +108,12 @@
     "id": "deep-tissue",
     "name": "Deep Tissue Massage",
     "shortName": "Deep Tissue Massage",
-    "description": "Intensievere massage die zich richt op dieper gelegen spierlagen en hardnekkige spierspanning.",
+    "typeLabel": "Diep · intensief",
+    "teaser": "Intensieve aandacht voor dieper gelegen spierspanning.",
+    "description": "Een intensievere massage die zich richt op dieper gelegen spierlagen en hardnekkige spierspanning. De druk is duidelijker aanwezig dan bij een ontspanningsmassage en wordt afgestemd op wat prettig en verantwoord voelt.",
+    "bestFor": "Voor wie van stevige druk houdt en vooral aandacht wil voor langdurige of dieper voelende spierspanning.",
+    "intensity": "Stevig tot intensief",
+    "oilLabel": "Met olie",
     "image": "/assets/images/deep-tissue.jpg",
     "imageAlt": "Deep tissue massage bij Montra Thai Massage Zoetermeer",
     "active": true,
@@ -103,7 +123,7 @@
     "durations": [
       {
         "minutes": 30,
-        "price": 40
+        "price": 35
       },
       {
         "minutes": 60,
@@ -123,7 +143,12 @@
     "id": "neck-back-shoulders",
     "name": "Nek, rug en schouders",
     "shortName": "Nek, rug & schouders",
-    "description": "Gerichte behandeling voor spanning in het bovenlichaam, met extra aandacht voor nek, rug en schouders.",
+    "typeLabel": "Gericht · bovenlichaam",
+    "teaser": "Extra aandacht voor spanning in nek, rug en schouders.",
+    "description": "Een gerichte behandeling van het bovenlichaam met extra aandacht voor nek, rug en schouders. Geschikt als je niet per se een volledige lichaamsmassage wilt maar vooral deze zones aandacht wilt geven.",
+    "bestFor": "Voor veel zitten, kantoorwerk of wanneer de spanning vooral in het bovenlichaam wordt gevoeld.",
+    "intensity": "Afgestemd",
+    "oilLabel": "In overleg",
     "image": "/assets/images/neck-back-shoulders.jpg",
     "imageAlt": "Massage van nek, rug en schouders in Zoetermeer",
     "active": true,
@@ -133,7 +158,7 @@
     "durations": [
       {
         "minutes": 30,
-        "price": 40
+        "price": 35
       },
       {
         "minutes": 60,
@@ -145,7 +170,12 @@
     "id": "migraine",
     "name": "Migraine Massage",
     "shortName": "Migraine Massage",
-    "description": "Rustige behandeling rond hoofd, nek en schouders, gericht op ontspanning en het verminderen van opgebouwde spanning.",
+    "typeLabel": "Zacht · hoofd & nek",
+    "teaser": "Rustige aandacht voor hoofd, nek en schouders.",
+    "description": "Een zachte behandeling rond hoofd, nek en schouders waarbij rustige drukpunttechnieken worden gebruikt. Bedoeld als ontspannende massage bij spanning en overprikkeling; het is geen medische behandeling of diagnose voor migraine.",
+    "bestFor": "Voor wie een rustige behandeling wil met de focus op hoofd, nek en schouders.",
+    "intensity": "Zacht",
+    "oilLabel": "Zonder olie",
     "image": "/assets/images/migraine.jpg",
     "imageAlt": "Rustige massage rond hoofd, nek en schouders",
     "active": true,
@@ -155,7 +185,7 @@
     "durations": [
       {
         "minutes": 30,
-        "price": 40
+        "price": 35
       },
       {
         "minutes": 60,
@@ -167,7 +197,12 @@
     "id": "oncology",
     "name": "Oncologie Massage",
     "shortName": "Oncologie Massage",
-    "description": "Zachte, zorgvuldig afgestemde massage. Bespreek vooraf je situatie en of deze behandeling op dit moment passend is.",
+    "typeLabel": "Zacht · zorgvuldig afgestemd",
+    "teaser": "Een zachte behandeling die altijd eerst wordt afgestemd.",
+    "description": "Een zachte en zorgvuldig afgestemde massage voor mensen tijdens of na een oncologisch traject. Neem vooraf contact op met Montra Thai Massage om te bespreken of en hoe de behandeling in jouw situatie passend kan zijn.",
+    "bestFor": "Alleen na persoonlijke afstemming met de salon. De keuzehulp vervangt geen medisch advies.",
+    "intensity": "Zacht en aangepast",
+    "oilLabel": "In overleg",
     "image": "/assets/images/oncology.jpg",
     "imageAlt": "Zachte oncologie massage bij Montra Thai Massage",
     "active": true,
