@@ -15,12 +15,15 @@ const legal = read('data/legal.json');
 const durationsText = (t) => t.durations?.length ? t.durations.map(d => `${d.minutes} min · ${euro(d.price)}`).join(' · ') : 'Tarief en duur in overleg';
 const treatmentCards = treatments.map(t => `
   <article class="treatment-card" data-treatment-id="${esc(t.id)}">
-    <div class="treatment-media"><img src="${esc(t.image)}" alt="${esc(t.imageAlt)}" loading="lazy" decoding="async"></div>
+    <button class="treatment-media js-treatment-detail" data-treatment="${esc(t.id)}" aria-label="Bekijk ${esc(t.name)}">
+      <img src="${esc(t.image)}" alt="${esc(t.imageAlt)}" loading="lazy" decoding="async">
+      <span class="type-chip">${esc(t.typeLabel || 'Massage')}</span>
+    </button>
     <div class="treatment-body">
       <div class="treatment-topline"><h3>${esc(t.name)}</h3><span>${t.durations?.length ? `vanaf ${euro(Math.min(...t.durations.map(d=>d.price)))}` : 'In overleg'}</span></div>
-      <p>${esc(t.description)}</p>
-      <div class="treatment-durations">${esc(durationsText(t))}</div>
-      <button class="text-link js-book" data-treatment="${esc(t.id)}">Afspraak aanvragen <span aria-hidden="true">↗</span></button>
+      <p>${esc(t.teaser || t.description)}</p>
+      <div class="treatment-meta"><span>${esc(t.intensity || 'Afgestemd')}</span><span>${esc(t.oilLabel || '')}</span></div>
+      <div class="treatment-actions"><button class="button button-ghost js-treatment-detail" data-treatment="${esc(t.id)}">Bekijk behandeling</button><button class="text-link js-book" data-treatment="${esc(t.id)}">Afspraak <span aria-hidden="true">↗</span></button></div>
     </div>
   </article>`).join('');
 
@@ -34,6 +37,8 @@ const packageCards = packages.map(p => `<article class="package-card"><div><span
 
 const openingRows = site.openingHours.map(h => `<div class="hours-row"><span>${esc(h.day)}</span><strong>${h.open ? `${esc(h.from)}–${esc(h.to)}` : 'Gesloten'}</strong></div>`).join('');
 const gallery = site.gallery.map((g,i) => `<figure class="gallery-item gallery-${i+1}"><img src="${esc(g.src)}" alt="${esc(g.alt)}" loading="lazy" decoding="async"></figure>`).join('');
+const socialLinks = (site.socials || []).filter(s => s.url).map(s => `<a class="social-link social-${esc(s.kind || 'link')}" href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label)} <span aria-hidden="true">↗</span></a>`).join('');
+const [streetAddress, postalCity='Zoetermeer'] = site.address.split(',').map(x => x.trim());
 const termsHtml = legal.terms.map(s => `<section><h3>${esc(s.heading)}</h3>${s.text.map(p=>`<p>${esc(p)}</p>`).join('')}</section>`).join('');
 const privacyHtml = legal.privacy.map(s => `<section><h3>${esc(s.heading)}</h3>${s.text.map(p=>`<p>${esc(p)}</p>`).join('')}</section>`).join('');
 
@@ -47,8 +52,8 @@ const schema = {
   image: absoluteUrl(site.hero.image),
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Stephensonstraat 2D',
-    postalCode: '2723 RN',
+    streetAddress: streetAddress,
+    postalCode: '2729 HB',
     addressLocality: 'Zoetermeer',
     addressCountry: 'NL'
   },
@@ -105,11 +110,21 @@ const html = `<!doctype html>
         <span class="eyebrow">${esc(site.hero.eyebrow)}</span>
         <h1>${esc(site.hero.title)}</h1>
         <p class="lead">${esc(site.hero.copy)}</p>
-        <div class="hero-actions"><button class="button button-primary js-book">${esc(site.hero.primaryCta)}</button><a class="button button-ghost" href="#behandelingen">${esc(site.hero.secondaryCta)}</a></div>
+        <div class="hero-actions"><a class="button button-primary js-start-choice" href="#keuzehulp">${esc(site.hero.primaryCta)}</a><button class="button button-ghost js-book">${esc(site.hero.secondaryCta)}</button></div>
+        <div class="hero-intents" aria-label="Snelle massagekeuze">
+          <span>Waar heb je nu vooral behoefte aan?</span>
+          <div>
+            <button data-hero-choice="relax">Ontspannen</button>
+            <button data-hero-choice="firm">Vastzittende spieren</button>
+            <button data-hero-choice="upper">Nek, rug & schouders</button>
+            <button data-hero-choice="help">Help mij kiezen</button>
+          </div>
+        </div>
         <div class="hero-facts"><span>Gecertificeerde Thaise massage</span><span>${esc(site.address)}</span></div>
       </div>
       <div class="hero-visual">
         <div class="hero-image-wrap"><img src="${esc(site.hero.image)}" alt="${esc(site.hero.imageAlt)}" fetchpriority="high"></div>
+        <div class="hero-overlay-card"><strong>Niet zeker welke massage?</strong><span>5 vragen · ± 45 sec</span><a href="#keuzehulp" class="js-start-choice">Doe de keuzehulp →</a></div>
         <div class="rating-card" aria-label="Google beoordeling ${site.reviews.rating} uit 5, gebaseerd op ${site.reviews.count} reviews"><strong>${site.reviews.rating.toFixed(1)}</strong><div><span class="stars" aria-hidden="true">★★★★★</span><small>${site.reviews.count} Google reviews</small></div></div>
       </div>
     </section>
@@ -117,14 +132,14 @@ const html = `<!doctype html>
     <section class="intro-strip" aria-label="Kerninformatie"><div><strong>Persoonlijke aandacht</strong><span>Behandeling afgestemd op jouw wensen</span></div><div><strong>Transparante prijzen</strong><span>Vanaf € 40</span></div><div><strong>Direct contact</strong><span>Afspraakaanvraag via WhatsApp</span></div></section>
 
     <section class="section section-pad" id="behandelingen">
-      <div class="section-heading split-heading"><div><span class="eyebrow">Behandelingen</span><h2>Vind de massage die bij je past.</h2></div><p>Korte, duidelijke uitleg en meteen de beschikbare duur en prijs. Geen lange verkooppraatjes.</p></div>
+      <div class="section-heading split-heading"><div><span class="eyebrow">Behandelingen</span><h2>Zeven behandelingen. Elk met een ander doel.</h2></div><p>Bekijk eerst het type, de intensiteit en vanafprijs. Tik op een behandeling voor de volledige uitleg en alle beschikbare tijden.</p></div>
       <div class="treatment-grid">${treatmentCards}</div>
     </section>
 
     <section class="choice-section section-pad" id="keuzehulp">
-      <div class="choice-copy"><span class="eyebrow">Massagekeuze</span><h2>Weet je nog niet wat je moet kiezen?</h2><p>Beantwoord drie korte vragen. Je krijgt een praktische suggestie op basis van je voorkeuren — geen medische diagnose.</p></div>
+      <div class="choice-copy"><span class="eyebrow">Persoonlijke massagekeuze</span><h2>In vijf vragen naar jouw beste match.</h2><p>We kijken naar je doel, lichaamszone, gewenste druk, olievoorkeur en situatie van vandaag. Daarna krijg je één duidelijke behandeling als beste match. Dit is geen medische diagnose.</p></div>
       <div class="choice-card" data-choice-helper>
-        <div class="choice-progress"><span>Vraag <b data-step>1</b> van 3</span><div><i data-progress></i></div></div>
+        <div class="choice-progress"><span>Vraag <b data-step>1</b> van 5</span><div><i data-progress></i></div></div>
         <div data-choice-content></div>
       </div>
     </section>
@@ -151,9 +166,9 @@ const html = `<!doctype html>
     <section class="booking-band section-pad"><div><span class="eyebrow eyebrow-light">Afspraak aanvragen</span><h2>${esc(site.booking.title)}</h2><p>${esc(site.booking.text)}</p></div><button class="button button-light js-book">Afspraak maken</button></section>
 
     <section class="contact-section section-pad" id="contact">
-      <div class="contact-card"><span class="eyebrow">Contact</span><h2>Montra Thai Massage</h2><a href="tel:+${site.phoneInternational}">${esc(site.phoneDisplay)}</a><a href="mailto:${esc(site.email)}">${esc(site.email)}</a><p>${esc(site.address)}</p><div class="contact-actions"><a class="button button-primary" href="https://wa.me/${site.phoneInternational}" target="_blank" rel="noopener">WhatsApp</a><a class="button button-ghost" href="${esc(site.reviews.googleMapsUrl)}" target="_blank" rel="noopener">Route plannen</a></div><small>KvK ${esc(site.kvk)}</small></div>
+      <div class="contact-card"><span class="eyebrow">Contact</span><h2>Montra Thai Massage</h2><a href="tel:+${site.phoneInternational}">${esc(site.phoneDisplay)}</a><a href="mailto:${esc(site.email)}">${esc(site.email)}</a><p>${esc(site.address)}</p><div class="contact-actions"><a class="button button-primary" href="https://wa.me/${site.phoneInternational}" target="_blank" rel="noopener">WhatsApp</a><a class="button button-ghost" href="${esc(site.reviews.googleMapsUrl)}" target="_blank" rel="noopener">Route plannen</a></div><div class="social-links" aria-label="Social en online profielen">${socialLinks}</div><small>KvK ${esc(site.kvk)}</small></div>
       <div class="hours-card"><span class="eyebrow">Openingstijden</span>${openingRows}<p class="hours-note">Afspraak gewenst? Vraag eerst een moment aan; de salon bevestigt de beschikbaarheid.</p></div>
-      <div class="map-card"><div class="map-placeholder" data-map><div><span class="map-icon" aria-hidden="true">⌖</span><h3>Stephensonstraat 2D</h3><p>2723 RN Zoetermeer</p><button class="button button-primary" data-load-map>Kaart laden</button><small>Google Maps wordt pas geladen na jouw keuze.</small></div></div></div>
+      <div class="map-card"><div class="map-placeholder" data-map><div><span class="map-icon" aria-hidden="true">⌖</span><h3>${esc(streetAddress)}</h3><p>${esc(postalCity)}</p><button class="button button-primary" data-load-map>Kaart laden</button><small>Google Maps wordt pas geladen na jouw keuze.</small></div></div></div>
     </section>
   </main>
 
@@ -163,6 +178,15 @@ const html = `<!doctype html>
 
   <dialog class="modal booking-modal" id="booking-modal" aria-labelledby="booking-title">
     <div class="modal-shell"><button class="modal-close" data-close aria-label="Sluiten">×</button><div class="modal-head"><span class="eyebrow">Afspraakaanvraag</span><h2 id="booking-title">Kies je gewenste moment.</h2><p>${esc(site.booking.note)}</p></div><form id="booking-form" novalidate><div class="form-grid"><label><span>Behandeling</span><select id="booking-treatment" required></select></label><label><span>Duur</span><select id="booking-duration" required></select></label><label><span>Datum</span><input id="booking-date" type="date" required></label><label><span>Gewenste tijd</span><select id="booking-time" required></select></label><label class="full"><span>Naam</span><input id="booking-name" type="text" autocomplete="name" required placeholder="Jouw naam"></label><label class="full"><span>Opmerking <em>optioneel</em></span><textarea id="booking-note" rows="3" placeholder="Bijvoorbeeld voorkeur voor druk of aandachtspunt"></textarea></label></div><div class="form-status" id="booking-status" aria-live="polite"></div><button class="button button-primary button-block" type="submit">Verder via WhatsApp</button><small class="form-fineprint">Je aanvraag is pas definitief nadat Montra Thai Massage via WhatsApp heeft bevestigd.</small></form></div>
+  </dialog>
+
+  <dialog class="modal treatment-modal" id="treatment-modal" aria-labelledby="treatment-detail-title">
+    <div class="modal-shell treatment-detail-shell"><button class="modal-close" data-close aria-label="Sluiten">×</button>
+      <div class="treatment-detail-grid">
+        <div class="treatment-detail-image"><img id="treatment-detail-image" src="" alt=""></div>
+        <div class="treatment-detail-copy"><span class="eyebrow" id="treatment-detail-type"></span><h2 id="treatment-detail-title"></h2><p class="detail-lead" id="treatment-detail-description"></p><div class="detail-facts" id="treatment-detail-facts"></div><div class="detail-best"><strong>Past vooral bij</strong><p id="treatment-detail-best"></p></div><div id="treatment-detail-prices" class="detail-prices"></div><button class="button button-primary" id="treatment-detail-book">Afspraak aanvragen</button></div>
+      </div>
+    </div>
   </dialog>
 
   <dialog class="modal legal-modal" id="legal-modal" aria-labelledby="legal-title"><div class="modal-shell legal-shell"><button class="modal-close" data-close aria-label="Sluiten">×</button><div class="modal-head"><span class="eyebrow">Informatie</span><h2 id="legal-title"></h2></div><div class="legal-content" id="legal-content"></div></div></dialog>
