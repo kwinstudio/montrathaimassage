@@ -1098,3 +1098,53 @@
     margin-top:0;
   }
 }
+
+
+/* Final responsive Maps sizing */
+.map-card{
+  position:relative;
+  min-height:380px;
+  overflow:hidden;
+}
+.map-card .map-placeholder{
+  width:100%;
+  height:100%;
+  min-height:380px;
+}
+.map-card .map-placeholder.is-loaded{
+  width:100%;
+  height:100%;
+  min-height:380px;
+  padding:0;
+}
+.map-card .map-placeholder.is-loaded iframe{
+  width:100%;
+  height:100%;
+  min-height:380px;
+  display:block;
+  border:0;
+}
+
+@media(max-width:980px){
+  .map-card{
+    min-height:340px;
+  }
+  .map-card .map-placeholder,
+  .map-card .map-placeholder.is-loaded,
+  .map-card .map-placeholder.is-loaded iframe{
+    min-height:340px;
+    height:340px;
+  }
+}
+
+@media(max-width:700px){
+  .map-card{
+    min-height:250px;
+  }
+  .map-card .map-placeholder,
+  .map-card .map-placeholder.is-loaded,
+  .map-card .map-placeholder.is-loaded iframe{
+    min-height:250px;
+    height:250px;
+  }
+}
