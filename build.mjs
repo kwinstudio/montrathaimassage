@@ -91,7 +91,7 @@ const html = `<!doctype html>
   <a class="skip-link" href="#main">Naar inhoud</a>
   <header class="site-header" id="top">
     <div class="header-inner">
-      <a class="brand" href="#top" aria-label="Montra Thai Massage home"><span class="brand-mark" aria-hidden="true">M</span><span><strong>Montra</strong><small>Thai Massage</small></span></a>
+      <a class="brand" href="/" aria-label="Ga naar de homepage van Montra Thai Massage"><span class="brand-mark" aria-hidden="true">M</span><span><strong>Montra</strong><small>Thai Massage</small></span></a>
       <nav class="desktop-nav" aria-label="Hoofdnavigatie">
         <a href="#behandelingen">Behandelingen</a><a href="#keuzehulp">Massagekeuze</a><a href="#prijzen">Prijzen</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
       </nav>
