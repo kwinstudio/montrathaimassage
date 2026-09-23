@@ -1,0 +1,51 @@
+name: Cache Montra website images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cache-images.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  cache-images:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download existing Montra images
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/images
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/0hongocc/montra2.jpg" -o assets/images/hero.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/330nud0m/ratree.jpeg" -o assets/images/ratree.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/uhhpevsa/behandeling-1.jpg" -o assets/images/traditional-thai.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/myophwt4/behandeling-2.jpg" -o assets/images/thai-oil.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/ywsfmcmj/behandeling-3.jpg" -o assets/images/thai-sport.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/nanpc5yk/behandeling-4.jpg" -o assets/images/deep-tissue.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/23rj5123/behandeling-5.jpg" -o assets/images/neck-back-shoulders.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/tg4lc4gd/behandeling-6.jpg" -o assets/images/migraine.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/yo0f0v4a/oncology.jfif" -o assets/images/oncology.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/lombt1my/gallery-01.jpeg" -o assets/images/gallery-01.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/ggjbveya/gallery-02.jpeg" -o assets/images/gallery-02.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/ahmhfrmh/gallery-03.jpeg" -o assets/images/gallery-03.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/5z4gvt4i/gallery-04.jpeg" -o assets/images/gallery-04.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/yddjyzfs/gallery-05.jpeg" -o assets/images/gallery-05.jpg
+          curl -fL --retry 3 "https://montrathaimassage.nl/media/zj0lf33h/gallery-06.jpeg" -o assets/images/gallery-06.jpg
+
+      - name: Commit cached images
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images
+          if git diff --cached --quiet; then
+            echo "No image changes to commit."
+            exit 0
+          fi
+          git commit -m "Cache original Montra salon images"
+          git push
