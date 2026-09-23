@@ -155,3 +155,224 @@
   .detail-prices{margin:0 0 20px}
   .social-links{margin-top:14px}
 }
+
+
+/* Mobile hero cleanup */
+.hero-secondary{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:var(--plum);
+  text-decoration:none;
+  font-weight:750;
+  padding:12px 4px;
+}
+.hero-trust{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 16px;
+  margin-top:22px;
+  color:var(--muted);
+  font-size:.82rem;
+}
+.hero-trust span{
+  position:relative;
+}
+.hero-trust span+span:before{
+  content:"";
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:#b9aea7;
+  position:absolute;
+  left:-10px;
+  top:.65em;
+}
+.hero-trust strong{color:var(--ink)}
+.quick-choice{
+  padding-top:58px;
+  padding-bottom:66px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:#fff;
+}
+.quick-choice-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:30px;
+  margin-bottom:24px;
+}
+.quick-choice-head .eyebrow{margin:0}
+.quick-choice-head h2{
+  font-family:Georgia,serif;
+  font-weight:500;
+  font-size:clamp(2rem,3vw,3rem);
+  letter-spacing:-.025em;
+  margin:0;
+}
+.quick-choice-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+.quick-choice-grid button{
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  min-height:96px;
+  padding:17px 18px;
+  text-align:left;
+  cursor:pointer;
+  transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.quick-choice-grid button:hover,
+.quick-choice-grid button:focus-visible{
+  border-color:var(--plum);
+  box-shadow:0 10px 30px rgba(48,40,36,.06);
+  transform:translateY(-2px);
+  outline:none;
+}
+.quick-choice-grid strong,
+.quick-choice-grid span{display:block}
+.quick-choice-grid strong{font-size:.92rem}
+.quick-choice-grid span{font-size:.75rem;color:var(--muted);margin-top:4px}
+.mobile-sticky{
+  transform:translateY(120%);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .22s ease,opacity .22s ease;
+}
+.mobile-sticky.is-visible{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
+
+@media(max-width:700px){
+  .site-header .header-inner{height:64px}
+  .brand strong{font-size:1rem}
+  .brand small{font-size:.62rem}
+  .brand-mark{width:34px;height:34px}
+
+  .hero{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    padding-top:16px;
+    padding-bottom:34px;
+    background:#fff;
+  }
+  .hero-visual{
+    order:1;
+    width:100%;
+  }
+  .hero-copy{
+    order:2;
+    padding:0;
+  }
+  .hero-image-wrap{
+    height:34svh;
+    min-height:250px;
+    max-height:330px;
+    border-radius:16px;
+  }
+  .hero-image-wrap img{
+    object-position:center 45%;
+  }
+  .rating-card{
+    left:12px;
+    right:auto;
+    bottom:12px;
+    padding:10px 12px;
+    gap:9px;
+    border-radius:11px;
+  }
+  .rating-card>strong{font-size:1.45rem}
+  .rating-card .stars{font-size:.72rem}
+  .rating-card small{font-size:.66rem}
+
+  .hero .eyebrow{
+    margin-bottom:10px;
+    font-size:.66rem;
+    letter-spacing:.14em;
+  }
+  .hero h1{
+    font-size:clamp(2.45rem,11vw,3.45rem);
+    line-height:.98;
+    margin:0 0 14px;
+    max-width:10ch;
+  }
+  .hero .lead{
+    max-width:31ch;
+    font-size:.92rem;
+    line-height:1.48;
+  }
+  .hero-actions{
+    display:block;
+    margin:22px 0 0;
+  }
+  .hero-actions .button{
+    width:100%;
+    min-height:50px;
+    font-size:.9rem;
+  }
+  .hero-secondary{
+    width:100%;
+    justify-content:center;
+    padding:13px 0 5px;
+    font-size:.82rem;
+  }
+  .hero-trust{
+    justify-content:center;
+    gap:6px 14px;
+    margin-top:16px;
+    font-size:.72rem;
+  }
+
+  .quick-choice{
+    padding-top:40px;
+    padding-bottom:46px;
+  }
+  .quick-choice-head{
+    display:block;
+    margin-bottom:17px;
+  }
+  .quick-choice-head .eyebrow{
+    margin-bottom:8px;
+  }
+  .quick-choice-head h2{
+    font-size:2rem;
+    line-height:1.05;
+  }
+  .quick-choice-grid{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .quick-choice-grid button{
+    min-height:82px;
+    padding:13px 12px;
+    border-radius:12px;
+  }
+  .quick-choice-grid strong{
+    font-size:.78rem;
+    line-height:1.25;
+  }
+  .quick-choice-grid span{
+    font-size:.66rem;
+  }
+
+  .mobile-sticky{
+    display:block;
+    padding:8px 12px max(8px,env(safe-area-inset-bottom));
+  }
+  .mobile-sticky .button{
+    min-height:48px;
+    font-size:.9rem;
+  }
+}
+
+@media(max-width:380px){
+  .quick-choice-grid{grid-template-columns:1fr}
+  .quick-choice-grid button{min-height:68px}
+}
