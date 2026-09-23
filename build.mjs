@@ -110,26 +110,30 @@ const html = `<!doctype html>
         <span class="eyebrow">${esc(site.hero.eyebrow)}</span>
         <h1>${esc(site.hero.title)}</h1>
         <p class="lead">${esc(site.hero.copy)}</p>
-        <div class="hero-actions"><a class="button button-primary js-start-choice" href="#keuzehulp">${esc(site.hero.primaryCta)}</a><button class="button button-ghost js-book">${esc(site.hero.secondaryCta)}</button></div>
-        <div class="hero-intents" aria-label="Snelle massagekeuze">
-          <span>Waar heb je nu vooral behoefte aan?</span>
-          <div>
-            <button data-hero-choice="relax">Ontspannen</button>
-            <button data-hero-choice="muscles">Vastzittende spieren</button>
-            <button data-hero-choice="upper">Nek, rug & schouders</button>
-            <button data-hero-choice="help">Help mij kiezen</button>
-          </div>
+        <div class="hero-actions">
+          <button class="button button-primary js-book">${esc(site.hero.primaryCta)}</button>
+          <a class="hero-secondary js-start-choice" href="#keuzehulp">${esc(site.hero.secondaryCta)} <span aria-hidden="true">→</span></a>
         </div>
-        <div class="hero-facts"><span>Gecertificeerde Thaise massage</span><span>${esc(site.address)}</span></div>
+        <div class="hero-trust"><span><strong>${site.reviews.rating.toFixed(1)}</strong> Google</span><span>Vanaf <strong>€35</strong></span><span>Zoetermeer</span></div>
       </div>
       <div class="hero-visual">
         <div class="hero-image-wrap"><img src="${esc(site.hero.image)}" alt="${esc(site.hero.imageAlt)}" fetchpriority="high"></div>
-        <div class="hero-overlay-card"><strong>Niet zeker welke massage?</strong><span>5 vragen · ± 45 sec</span><a href="#keuzehulp" class="js-start-choice">Doe de keuzehulp →</a></div>
         <div class="rating-card" aria-label="Google beoordeling ${site.reviews.rating} uit 5, gebaseerd op ${site.reviews.count} reviews"><strong>${site.reviews.rating.toFixed(1)}</strong><div><span class="stars" aria-hidden="true">★★★★★</span><small>${site.reviews.count} Google reviews</small></div></div>
       </div>
     </section>
 
-    <section class="intro-strip" aria-label="Kerninformatie"><div><strong>Persoonlijke aandacht</strong><span>Behandeling afgestemd op jouw wensen</span></div><div><strong>Transparante prijzen</strong><span>Vanaf € 40</span></div><div><strong>Direct contact</strong><span>Afspraakaanvraag via WhatsApp</span></div></section>
+    <section class="quick-choice section-pad" aria-labelledby="quick-choice-title">
+      <div class="quick-choice-head">
+        <span class="eyebrow">Snel kiezen</span>
+        <h2 id="quick-choice-title">Waar heb je behoefte aan?</h2>
+      </div>
+      <div class="quick-choice-grid">
+        <button data-hero-choice="relax"><strong>Ontspannen</strong><span>Rust & loslaten</span></button>
+        <button data-hero-choice="muscles"><strong>Vastzittende spieren</strong><span>Steviger spierwerk</span></button>
+        <button data-hero-choice="upper"><strong>Nek, rug & schouders</strong><span>Gerichte aandacht</span></button>
+        <button data-hero-choice="help"><strong>Help mij kiezen</strong><span>5 korte vragen</span></button>
+      </div>
+    </section>
 
     <section class="section section-pad" id="behandelingen">
       <div class="section-heading split-heading"><div><span class="eyebrow">Behandelingen</span><h2>Zeven behandelingen. Elk met een ander doel.</h2></div><p>Bekijk eerst het type, de intensiteit en vanafprijs. Tik op een behandeling voor de volledige uitleg en alle beschikbare tijden.</p></div>
