@@ -1235,3 +1235,40 @@
     white-space:normal;
   }
 }
+
+
+/* Normalize booking form controls across iOS / mobile */
+.form-grid input:not([type="checkbox"]),
+.form-grid select{
+  height:52px;
+  min-height:52px;
+  max-height:52px;
+  line-height:1.2;
+}
+.form-grid input[type="date"]{
+  display:block;
+  width:100%;
+  height:52px;
+  min-height:52px;
+  max-height:52px;
+  padding:0 14px;
+  line-height:52px;
+  -webkit-appearance:none;
+  appearance:none;
+  background:#fff;
+}
+.form-grid textarea{
+  min-height:96px;
+  height:auto;
+  max-height:none;
+}
+
+@media(max-width:700px){
+  .form-grid input:not([type="checkbox"]),
+  .form-grid select,
+  .form-grid input[type="date"]{
+    height:52px;
+    min-height:52px;
+    max-height:52px;
+  }
+}
