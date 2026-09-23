@@ -1272,3 +1272,76 @@
     max-height:52px;
   }
 }
+
+
+/* Montra matcher polish */
+.choice-card{
+  border:1px solid rgba(95,49,95,.10);
+}
+.choice-progress{
+  color:var(--muted);
+}
+.choice-progress>div{
+  background:#eee5ed;
+}
+.choice-progress i{
+  background:var(--plum);
+}
+.choice-question h3{
+  color:var(--ink);
+}
+.choice-options{
+  gap:9px;
+}
+.choice-option{
+  border:1px solid rgba(95,49,95,.14);
+  background:#fff;
+  color:var(--ink);
+  border-radius:12px;
+  box-shadow:none;
+}
+.choice-option strong{
+  color:var(--plum-dark);
+}
+.choice-option:hover,
+.choice-option:focus{
+  border-color:rgba(95,49,95,.45);
+  background:#fbf8fb;
+  color:var(--ink);
+}
+.choice-option:hover strong,
+.choice-option:focus strong{
+  color:var(--plum);
+}
+
+@media(max-width:700px){
+  .choice-card{
+    padding:18px 14px;
+    border-radius:16px;
+  }
+  .choice-progress{
+    margin-bottom:20px;
+    font-size:.74rem;
+  }
+  .choice-question h3{
+    font-size:1.55rem;
+    line-height:1.08;
+    margin-bottom:14px;
+  }
+  .choice-options{
+    gap:7px;
+  }
+  .choice-option{
+    min-height:54px;
+    padding:12px 14px;
+    border-radius:10px;
+    justify-content:center;
+  }
+  .choice-option strong{
+    font-size:.82rem;
+    line-height:1.2;
+  }
+  .choice-option span{
+    display:none;
+  }
+}
