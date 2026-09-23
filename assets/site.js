@@ -160,12 +160,12 @@
   const progress = qs('[data-progress]', helper);
   const answers = {};
   const questions = [
-    {key:'goal', title:'Wat wil je vooral uit de massage halen?', options:[
-      ['relax','Volledig ontspannen','Rust in mijn hoofd en lichaam'],
-      ['muscles','Vastzittende spieren aanpakken','Ik wil duidelijk spierwerk voelen'],
-      ['mobility','Meer ruimte en beweging','Stretching en traditionele technieken'],
-      ['upper','Nek, rug of schouders','Daar zit mijn meeste spanning'],
-      ['head','Hoofd en nek tot rust brengen','Rustige aandacht voor bovenlichaam']
+    {key:'goal', title:'Waar heb je behoefte aan?', options:[
+      ['relax','Ontspannen',''],
+      ['muscles','Spieren losmaken',''],
+      ['mobility','Meer bewegen',''],
+      ['upper','Nek, rug & schouders',''],
+      ['head','Hoofd & nek ontspannen','']
     ]},
     {key:'area', title:'Waar wil je vooral aandacht voor?', options:[
       ['full','Mijn hele lichaam','Een complete behandeling'],
@@ -207,7 +207,7 @@
     const q=questions[step];
     stepEl.textContent=String(step+1);
     progress.style.width=`${((step+1)/questions.length)*100}%`;
-    helperContent.innerHTML=`<div class="choice-question"><h3>${q.title}</h3><div class="choice-options">${q.options.map(([v,l,s])=>`<button type="button" class="choice-option" data-value="${v}"><strong>${l}</strong><span>${s}</span></button>`).join('')}</div></div>`;
+    helperContent.innerHTML=`<div class="choice-question"><h3>${q.title}</h3><div class="choice-options">${q.options.map(([v,l,s])=>`<button type="button" class="choice-option" data-value="${v}"><strong>${l}</strong>${s ? `<span>${s}</span>` : ''}</button>`).join('')}</div></div>`;
     qsa('.choice-option',helperContent).forEach(btn=>btn.addEventListener('click',()=>{
       answers[q.key]=btn.dataset.value;
       step++;
