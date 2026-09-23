@@ -126,19 +126,6 @@ const html = `<!doctype html>
           </div>
         </div>
 
-        <div class="hero-picker" aria-label="Snelle massagekeuze">
-          <div class="hero-picker-copy">
-            <span>Wat heeft je lichaam vandaag nodig?</span>
-            <small>Kies één optie. We helpen je vanaf daar verder.</small>
-          </div>
-          <div class="hero-picker-options">
-            <button data-hero-choice="relax"><span class="hero-choice-icon" aria-hidden="true">01</span><strong>Ontspanning</strong></button>
-            <button data-hero-choice="muscles"><span class="hero-choice-icon" aria-hidden="true">02</span><strong>Spierherstel</strong></button>
-            <button data-hero-choice="upper"><span class="hero-choice-icon" aria-hidden="true">03</span><strong>Nek & rug</strong></button>
-            <button data-hero-choice="help"><span class="hero-choice-icon" aria-hidden="true">04</span><strong>Help mij kiezen</strong></button>
-          </div>
-        </div>
-
         <a class="hero-scroll" href="#behandelingen">Bekijk behandelingen <span aria-hidden="true">↓</span></a>
       </div>
     </section>
