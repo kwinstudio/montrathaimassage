@@ -150,8 +150,7 @@ const html = `<!doctype html>
       <section class="passes-feature" aria-label="Strippenkaart en cadeaubon">
         <div class="passes-feature-copy">
           <span class="eyebrow">Strippenkaart & cadeaubon</span>
-          <h3>Kies wat bij je past.</h3>
-          <p>Een voordelige strippenkaart voor meerdere massages, of vraag naar de mogelijkheden voor een cadeaubon.</p>
+          <h3>Voordelig vaker komen of cadeau geven.</h3>
         </div>
         <div class="passes-cards">
           <a class="pass-card" href="https://wa.me/${site.phoneInternational}?text=${encodeURIComponent('Hallo Montra Thai Massage, ik heb interesse in de strippenkaart van 5× 60 minuten voor €300. Kun je mij hierover meer informatie geven?')}" target="_blank" rel="noopener">
@@ -170,9 +169,9 @@ const html = `<!doctype html>
           </a>
           <a class="pass-card pass-card-gift" href="https://wa.me/${site.phoneInternational}?text=${encodeURIComponent('Hallo Montra Thai Massage, ik heb interesse in een cadeaubon. Kun je mij vertellen welke mogelijkheden er zijn?')}" target="_blank" rel="noopener">
             <span class="pass-kicker">Cadeaubon</span>
-            <strong>Geef een massage cadeau</strong>
-            <b>Mogelijkheden op aanvraag</b>
-            <small>Vraag Montra naar de opties</small>
+            <strong>Massage cadeau geven</strong>
+            <b>Op aanvraag</b>
+            <small>Vraag Montra naar de mogelijkheden</small>
             <span class="pass-link">Vraag aan via WhatsApp →</span>
           </a>
         </div>
