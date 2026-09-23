@@ -1,0 +1,105 @@
+[
+  {
+    "id": "traditional-thai",
+    "name": "Traditional Thai Massage",
+    "shortName": "Thai Massage",
+    "description": "Traditionele Thaise drukpunt- en stretchtechnieken, gericht op bewegen, loslaten en ontspanning.",
+    "image": "https://montrathaimassage.nl/media/uhhpevsa/behandeling-1.jpg",
+    "imageAlt": "Traditionele Thaise massage bij Montra Thai Massage Zoetermeer",
+    "active": true,
+    "category": "traditional",
+    "oil": false,
+    "pressure": "medium",
+    "durations": [
+      {"minutes": 30, "price": 40}, {"minutes": 60, "price": 65}, {"minutes": 90, "price": 95}, {"minutes": 120, "price": 120}
+    ]
+  },
+  {
+    "id": "thai-oil",
+    "name": "Thai Oil Massage",
+    "shortName": "Thai Olie Massage",
+    "description": "Ontspannende massage met warme olie en vloeiende technieken voor een rustig en ontspannen gevoel.",
+    "image": "https://montrathaimassage.nl/media/myophwt4/behandeling-2.jpg",
+    "imageAlt": "Thaise oliemassage bij Montra Thai Massage Zoetermeer",
+    "active": true,
+    "category": "relax",
+    "oil": true,
+    "pressure": "soft",
+    "durations": [
+      {"minutes": 30, "price": 40}, {"minutes": 60, "price": 65}, {"minutes": 90, "price": 95}, {"minutes": 120, "price": 120}
+    ]
+  },
+  {
+    "id": "thai-sport",
+    "name": "Thai Sport Massage",
+    "shortName": "Thai Sport Massage",
+    "description": "Stevigere, doelgerichte massage voor wie spieren intensiever wil laten behandelen na inspanning of belasting.",
+    "image": "https://montrathaimassage.nl/media/ywsfmcmj/behandeling-3.jpg",
+    "imageAlt": "Thaise sportmassage in Zoetermeer",
+    "active": true,
+    "category": "sport",
+    "oil": false,
+    "pressure": "firm",
+    "durations": [
+      {"minutes": 30, "price": 40}, {"minutes": 60, "price": 65}, {"minutes": 90, "price": 95}, {"minutes": 120, "price": 120}
+    ]
+  },
+  {
+    "id": "deep-tissue",
+    "name": "Deep Tissue Massage",
+    "shortName": "Deep Tissue Massage",
+    "description": "Intensievere massage die zich richt op dieper gelegen spierlagen en hardnekkige spierspanning.",
+    "image": "https://montrathaimassage.nl/media/nanpc5yk/behandeling-4.jpg",
+    "imageAlt": "Deep tissue massage bij Montra Thai Massage Zoetermeer",
+    "active": true,
+    "category": "firm",
+    "oil": true,
+    "pressure": "firm",
+    "durations": [
+      {"minutes": 30, "price": 40}, {"minutes": 60, "price": 65}, {"minutes": 90, "price": 95}, {"minutes": 120, "price": 120}
+    ]
+  },
+  {
+    "id": "neck-back-shoulders",
+    "name": "Nek, rug en schouders",
+    "shortName": "Nek, rug & schouders",
+    "description": "Gerichte behandeling voor spanning in het bovenlichaam, met extra aandacht voor nek, rug en schouders.",
+    "image": "https://montrathaimassage.nl/media/23rj5123/behandeling-5.jpg",
+    "imageAlt": "Massage van nek, rug en schouders in Zoetermeer",
+    "active": true,
+    "category": "upper",
+    "oil": false,
+    "pressure": "medium",
+    "durations": [
+      {"minutes": 30, "price": 40}, {"minutes": 60, "price": 65}
+    ]
+  },
+  {
+    "id": "migraine",
+    "name": "Migraine Massage",
+    "shortName": "Migraine Massage",
+    "description": "Rustige behandeling rond hoofd, nek en schouders, gericht op ontspanning en het verminderen van opgebouwde spanning.",
+    "image": "https://montrathaimassage.nl/media/tg4lc4gd/behandeling-6.jpg",
+    "imageAlt": "Rustige massage rond hoofd, nek en schouders",
+    "active": true,
+    "category": "head",
+    "oil": false,
+    "pressure": "soft",
+    "durations": [
+      {"minutes": 30, "price": 40}, {"minutes": 60, "price": 65}
+    ]
+  },
+  {
+    "id": "oncology",
+    "name": "Oncologie Massage",
+    "shortName": "Oncologie Massage",
+    "description": "Zachte, zorgvuldig afgestemde massage. Bespreek vooraf je situatie en of deze behandeling op dit moment passend is.",
+    "image": "https://montrathaimassage.nl/media/yo0f0v4a/oncology.jfif",
+    "imageAlt": "Zachte oncologie massage bij Montra Thai Massage",
+    "active": true,
+    "category": "special",
+    "oil": false,
+    "pressure": "soft",
+    "durations": []
+  }
+]
