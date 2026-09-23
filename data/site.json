@@ -18,9 +18,11 @@
   },
   "trust": {
     "title": "Persoonlijk, professioneel en met aandacht.",
-    "text": "Ratree is ervaren en gecertificeerd in Thaise massage. Behandelingen worden afgestemd op jouw wensen en worden uitgevoerd in een rustige, respectvolle setting.",
+    "text": "Bij Montra staat persoonlijke aandacht centraal. Ratree stemt iedere behandeling af op jouw wensen en op wat prettig voelt voor jouw lichaam.",
     "image": "/assets/images/ratree.jpg",
-    "imageAlt": "Ratree, masseuse bij Montra Thai Massage Zoetermeer"
+    "imageAlt": "Ratree, masseuse bij Montra Thai Massage Zoetermeer",
+    "secondaryText": "Je kunt kiezen uit verschillende Thaise massagetechnieken: van rustig en ontspannend tot steviger en meer gericht op specifieke spierspanning. De behandeling vindt plaats in een rustige, respectvolle setting.",
+    "closingText": "Twijfel je welke massage bij je past? Dan kun je vooraf de massagekeuze gebruiken of tijdens het contact samen afstemmen welke behandeling het meest passend is."
   },
   "reviews": {
     "rating": 5,
