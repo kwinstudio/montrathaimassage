@@ -149,21 +149,37 @@ const html = `<!doctype html>
       <div class="packages-grid">${packageCards}</div>
       <section class="passes-feature" aria-label="Strippenkaart en cadeaubon">
         <div class="passes-feature-copy">
-          <span class="eyebrow">Vaker ontspannen</span>
-          <h3>Strippenkaart & cadeaubon</h3>
-          <p>Voor wie vaker terugkomt of iemand een massage cadeau wil doen.</p>
+          <span class="eyebrow">Strippenkaart & cadeaubon</span>
+          <h3>Kies wat bij je past.</h3>
+          <p>Een voordelige strippenkaart voor meerdere massages, of vraag naar de mogelijkheden voor een cadeaubon.</p>
         </div>
-        <div class="passes-options">
-          <div><span>10 behandelingen</span><strong>10× 60 min · € 585</strong></div>
-          <div><span>5 behandelingen</span><strong>5× 60 min · € 300</strong></div>
-          <div><span>Geldigheid</span><strong>12 maanden</strong></div>
+        <div class="passes-cards">
+          <a class="pass-card" href="https://wa.me/${site.phoneInternational}?text=${encodeURIComponent('Hallo Montra Thai Massage, ik heb interesse in de strippenkaart van 5× 60 minuten voor €300. Kun je mij hierover meer informatie geven?')}" target="_blank" rel="noopener">
+            <span class="pass-kicker">Strippenkaart</span>
+            <strong>5× 60 minuten</strong>
+            <b>€ 300</b>
+            <small>12 maanden geldig</small>
+            <span class="pass-link">Vraag aan via WhatsApp →</span>
+          </a>
+          <a class="pass-card pass-card-featured" href="https://wa.me/${site.phoneInternational}?text=${encodeURIComponent('Hallo Montra Thai Massage, ik heb interesse in de strippenkaart van 10× 60 minuten voor €585. Kun je mij hierover meer informatie geven?')}" target="_blank" rel="noopener">
+            <span class="pass-kicker">Strippenkaart</span>
+            <strong>10× 60 minuten</strong>
+            <b>€ 585</b>
+            <small>12 maanden geldig</small>
+            <span class="pass-link">Vraag aan via WhatsApp →</span>
+          </a>
+          <a class="pass-card pass-card-gift" href="https://wa.me/${site.phoneInternational}?text=${encodeURIComponent('Hallo Montra Thai Massage, ik heb interesse in een cadeaubon. Kun je mij vertellen welke mogelijkheden er zijn?')}" target="_blank" rel="noopener">
+            <span class="pass-kicker">Cadeaubon</span>
+            <strong>Geef een massage cadeau</strong>
+            <b>Mogelijkheden op aanvraag</b>
+            <small>Vraag Montra naar de opties</small>
+            <span class="pass-link">Vraag aan via WhatsApp →</span>
+          </a>
         </div>
-        <a class="button button-primary passes-cta" href="https://wa.me/${site.phoneInternational}" target="_blank" rel="noopener">Vraag ernaar via WhatsApp</a>
       </section>
     </section>
 
     <section class="trust-section section-pad" id="over">
-      <div class="trust-media"><img src="${esc(site.trust.image)}" alt="${esc(site.trust.imageAlt)}" loading="lazy" decoding="async"></div>
       <div class="trust-copy">
         <span class="eyebrow">Over Montra</span>
         <h2>${esc(site.trust.title)}</h2>
@@ -172,10 +188,15 @@ const html = `<!doctype html>
           <p>${esc(site.trust.secondaryText || '')}</p>
           <p>${esc(site.trust.closingText || '')}</p>
         </div>
+      </div>
+
+      <div class="trust-media"><img src="${esc(site.trust.image)}" alt="${esc(site.trust.imageAlt)}" loading="lazy" decoding="async"></div>
+
+      <div class="trust-extra">
         <div class="trust-points">
           <div><span class="trust-number">01</span><strong>Authentieke technieken</strong><span>Traditionele Thaise technieken vormen de basis, met aandacht voor jouw persoonlijke voorkeuren.</span></div>
           <div><span class="trust-number">02</span><strong>Rustige setting</strong><span>Een professionele behandeling in een rustige omgeving, met respect voor jouw grenzen en comfort.</span></div>
-          <div><span class="trust-number">03</span><strong>Van ontspanning tot stevig</strong><span>Kies bijvoorbeeld voor Thai Oil, Traditional Thai, Deep Tissue, sportmassage of een gerichte behandeling.</span></div>
+          <div><span class="trust-number">03</span><strong>Van ontspanning tot stevig</strong><span>Van Thai Oil en Traditional Thai tot Deep Tissue, sportmassage en gerichte behandelingen.</span></div>
         </div>
         <div class="trust-actions">
           <a class="button button-primary" href="#behandelingen">Bekijk behandelingen</a>
