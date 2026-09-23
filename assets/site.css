@@ -376,3 +376,290 @@
   .quick-choice-grid{grid-template-columns:1fr}
   .quick-choice-grid button{min-height:68px}
 }
+
+
+/* Immersive hero v3 */
+.hero.hero-immersive{
+  position:relative;
+  display:block;
+  min-height:calc(100svh - 78px);
+  padding:0;
+  overflow:hidden;
+  color:#fff;
+  background:#261d21;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 42%;
+  z-index:0;
+  transform:scale(1.002);
+}
+.hero-shade{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:
+    linear-gradient(90deg,rgba(22,16,19,.82) 0%,rgba(22,16,19,.58) 43%,rgba(22,16,19,.18) 70%,rgba(22,16,19,.12) 100%),
+    linear-gradient(0deg,rgba(22,16,19,.62) 0%,rgba(22,16,19,.08) 42%,rgba(22,16,19,.18) 100%);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  min-height:calc(100svh - 78px);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding-top:86px;
+  padding-bottom:36px;
+}
+.hero.hero-immersive .hero-copy{
+  max-width:780px;
+  padding:0;
+}
+.hero.hero-immersive .eyebrow{
+  color:#f0deef;
+  margin-bottom:14px;
+}
+.hero.hero-immersive h1{
+  color:#fff;
+  max-width:760px;
+  font-size:clamp(3.8rem,6.8vw,7rem);
+  line-height:.92;
+  letter-spacing:-.05em;
+  margin:0 0 20px;
+  text-wrap:balance;
+}
+.hero.hero-immersive .lead{
+  color:rgba(255,255,255,.82);
+  max-width:630px;
+  font-size:1.08rem;
+  line-height:1.55;
+}
+.hero.hero-immersive .hero-actions{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin:28px 0 18px;
+}
+.hero.hero-immersive .button-primary{
+  background:#fff;
+  color:var(--plum-dark);
+  box-shadow:none;
+}
+.hero.hero-immersive .button-primary:hover{
+  background:#f7f0f6;
+}
+.hero.hero-immersive .hero-secondary{
+  color:#fff;
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.45);
+}
+.hero.hero-immersive .hero-trust{
+  color:rgba(255,255,255,.72);
+  margin-top:0;
+}
+.hero.hero-immersive .hero-trust strong{color:#fff}
+.hero.hero-immersive .hero-trust span+span:before{background:rgba(255,255,255,.45)}
+
+.hero-picker{
+  margin-top:34px;
+  display:grid;
+  grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);
+  gap:20px;
+  align-items:center;
+  max-width:1120px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:18px;
+  background:rgba(25,18,22,.46);
+  backdrop-filter:blur(14px);
+  box-shadow:0 18px 50px rgba(0,0,0,.16);
+}
+.hero-picker-copy{
+  padding:6px 8px;
+}
+.hero-picker-copy span,
+.hero-picker-copy small{
+  display:block;
+}
+.hero-picker-copy span{
+  font-family:Georgia,serif;
+  font-size:1.12rem;
+  line-height:1.18;
+}
+.hero-picker-copy small{
+  color:rgba(255,255,255,.66);
+  margin-top:5px;
+  font-size:.74rem;
+}
+.hero-picker-options{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+}
+.hero-picker-options button{
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  min-height:72px;
+  padding:11px 12px;
+  text-align:left;
+  cursor:pointer;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;
+}
+.hero-picker-options button:hover,
+.hero-picker-options button:focus-visible{
+  background:rgba(255,255,255,.16);
+  border-color:rgba(255,255,255,.42);
+  transform:translateY(-1px);
+  outline:none;
+}
+.hero-choice-icon{
+  display:block;
+  font-size:.62rem;
+  color:#e6cce3;
+  letter-spacing:.08em;
+  margin-bottom:7px;
+}
+.hero-picker-options strong{
+  display:block;
+  font-size:.81rem;
+  line-height:1.15;
+}
+.hero-scroll{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  align-self:flex-start;
+  color:rgba(255,255,255,.72);
+  font-size:.72rem;
+  text-decoration:none;
+  margin-top:18px;
+  transition:color .18s ease;
+}
+.hero-scroll:hover{color:#fff}
+
+@media(max-width:980px){
+  .hero.hero-immersive,
+  .hero.hero-immersive .hero-content{
+    min-height:calc(100svh - 68px);
+  }
+  .hero.hero-immersive h1{
+    font-size:clamp(3.4rem,9vw,5.8rem);
+    max-width:700px;
+  }
+  .hero-picker{
+    grid-template-columns:1fr;
+    max-width:760px;
+  }
+  .hero-picker-options{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
+
+@media(max-width:700px){
+  .hero.hero-immersive{
+    min-height:calc(100svh - 64px);
+    background:#20171c;
+  }
+  .hero.hero-immersive .hero-content{
+    min-height:calc(100svh - 64px);
+    padding-top:76px;
+    padding-bottom:22px;
+    justify-content:flex-end;
+  }
+  .hero-bg{
+    object-position:60% center;
+  }
+  .hero-shade{
+    background:
+      linear-gradient(0deg,rgba(23,16,20,.93) 0%,rgba(23,16,20,.72) 38%,rgba(23,16,20,.18) 67%,rgba(23,16,20,.12) 100%);
+  }
+  .hero.hero-immersive .hero-copy{
+    max-width:none;
+  }
+  .hero.hero-immersive .eyebrow{
+    font-size:.62rem;
+    margin-bottom:9px;
+  }
+  .hero.hero-immersive h1{
+    font-size:clamp(2.55rem,11.6vw,3.55rem);
+    line-height:.96;
+    max-width:10.5ch;
+    margin-bottom:12px;
+  }
+  .hero.hero-immersive .lead{
+    max-width:33ch;
+    font-size:.88rem;
+    line-height:1.46;
+    color:rgba(255,255,255,.8);
+  }
+  .hero.hero-immersive .hero-actions{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:14px;
+    margin:19px 0 12px;
+  }
+  .hero.hero-immersive .hero-actions .button{
+    min-height:48px;
+    width:auto;
+    padding:12px 18px;
+  }
+  .hero.hero-immersive .hero-secondary{
+    width:auto;
+    justify-content:flex-start;
+    font-size:.76rem;
+    padding:12px 0 9px;
+  }
+  .hero.hero-immersive .hero-trust{
+    justify-content:flex-start;
+    font-size:.67rem;
+    gap:5px 13px;
+    margin-top:2px;
+  }
+  .hero-picker{
+    margin-top:20px;
+    padding:10px;
+    gap:10px;
+    border-radius:14px;
+    background:rgba(27,18,23,.58);
+  }
+  .hero-picker-copy{
+    padding:1px 3px 3px;
+  }
+  .hero-picker-copy span{
+    font-size:.94rem;
+  }
+  .hero-picker-copy small{
+    display:none;
+  }
+  .hero-picker-options{
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+  .hero-picker-options button{
+    min-height:52px;
+    border-radius:10px;
+    padding:8px 9px;
+  }
+  .hero-choice-icon{
+    display:none;
+  }
+  .hero-picker-options strong{
+    font-size:.71rem;
+  }
+  .hero-scroll{
+    display:none;
+  }
+}
+
+@media(max-width:380px){
+  .hero.hero-immersive .hero-content{padding-bottom:16px}
+  .hero.hero-immersive h1{font-size:2.35rem}
+  .hero-picker-options button{min-height:48px}
+}
