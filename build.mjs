@@ -122,19 +122,6 @@ const html = `<!doctype html>
       </div>
     </section>
 
-    <section class="quick-choice section-pad" aria-labelledby="quick-choice-title">
-      <div class="quick-choice-head">
-        <span class="eyebrow">Snel kiezen</span>
-        <h2 id="quick-choice-title">Waar heb je behoefte aan?</h2>
-      </div>
-      <div class="quick-choice-grid">
-        <button data-hero-choice="relax"><strong>Ontspannen</strong><span>Rust & loslaten</span></button>
-        <button data-hero-choice="muscles"><strong>Vastzittende spieren</strong><span>Steviger spierwerk</span></button>
-        <button data-hero-choice="upper"><strong>Nek, rug & schouders</strong><span>Gerichte aandacht</span></button>
-        <button data-hero-choice="help"><strong>Help mij kiezen</strong><span>5 korte vragen</span></button>
-      </div>
-    </section>
-
     <section class="section section-pad" id="behandelingen">
       <div class="section-heading split-heading"><div><span class="eyebrow">Behandelingen</span><h2>Zeven behandelingen. Elk met een ander doel.</h2></div><p>Bekijk eerst het type, de intensiteit en vanafprijs. Tik op een behandeling voor de volledige uitleg en alle beschikbare tijden.</p></div>
       <div class="treatment-grid">${treatmentCards}</div>
