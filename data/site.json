@@ -4,17 +4,17 @@
   "phoneDisplay": "06 23 24 99 25",
   "phoneInternational": "31623249925",
   "email": "info@montrathaimassage.nl",
-  "address": "Stephensonstraat 2D, 2723 RN Zoetermeer",
+  "address": "Poortugaalstraat 51, 2729 HB Zoetermeer",
   "kvk": "93738390",
   "noEroticText": "Montra Thai Massage biedt geen erotische en/of seksuele diensten aan.",
   "hero": {
     "eyebrow": "Thaise massage in Zoetermeer",
-    "title": "Ruimte voor herstel. Tijd voor rust.",
-    "copy": "Persoonlijke Thaise massage door Ratree, afgestemd op de spanning en ontspanning die jouw lichaam op dat moment nodig heeft.",
-    "primaryCta": "Afspraak maken",
-    "secondaryCta": "Bekijk behandelingen",
+    "title": "Waar vraagt jouw lichaam vandaag om?",
+    "copy": "Van diepe ontspanning tot gerichte aandacht voor vastzittende spieren. Kies zelf of laat Montra je in vijf korte vragen naar de best passende behandeling leiden.",
+    "primaryCta": "Vind mijn massage",
+    "secondaryCta": "Afspraak maken",
     "image": "/assets/images/hero.jpg",
-    "imageAlt": "Ratree van Montra Thai Massage tijdens een massagebehandeling in Zoetermeer"
+    "imageAlt": "Thaise massagebehandeling bij Montra Thai Massage in Zoetermeer"
   },
   "trust": {
     "title": "Persoonlijk, professioneel en met aandacht.",
@@ -26,7 +26,7 @@
     "rating": 5,
     "count": 30,
     "text": "Bekijk de actuele Google-beoordeling en ervaringen van bezoekers.",
-    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Montra+Thai+Massage+Stephensonstraat+2D+Zoetermeer&query_place_id=ChIJT42taffPxUcRsH1gfRQK1To",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Montra+Thai+Massage+Poortugaalstraat+51+Zoetermeer",
     "writeReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJT42taffPxUcRsH1gfRQK1To"
   },
   "booking": {
@@ -118,5 +118,17 @@
     "description": "Professionele Thaise massage in Zoetermeer bij Montra Thai Massage. Bekijk behandelingen, actuele prijzen en vraag eenvoudig een afspraak aan via WhatsApp.",
     "canonical": "https://montrathaimassage.nl/",
     "localKeyword": "Thaise massage Zoetermeer"
-  }
+  },
+  "socials": [
+    {
+      "label": "WhatsApp",
+      "url": "https://wa.me/31623249925",
+      "kind": "whatsapp"
+    },
+    {
+      "label": "Google",
+      "url": "https://www.google.com/maps/search/?api=1&query=Montra+Thai+Massage+Poortugaalstraat+51+Zoetermeer",
+      "kind": "google"
+    }
+  ]
 }
