@@ -136,7 +136,7 @@ const html = `<!doctype html>
     </section>
 
     <section class="choice-section section-pad" id="keuzehulp">
-      <div class="choice-copy"><span class="eyebrow">Persoonlijke massagekeuze</span><h2>In vijf vragen naar jouw beste match.</h2><p>Beantwoord vijf korte vragen en ontdek welke behandeling het beste bij je voorkeuren past. Geen medische diagnose.</p></div>
+      <div class="choice-copy"><span class="eyebrow">Persoonlijke massagekeuze</span><h2>In vijf vragen naar jouw beste match.</h2></div>
       <div class="choice-card" data-choice-helper>
         <div class="choice-progress"><span>Vraag <b data-step>1</b> van 5</span><div><i data-progress></i></div></div>
         <div data-choice-content></div>
@@ -144,7 +144,7 @@ const html = `<!doctype html>
     </section>
 
     <section class="section section-pad" id="prijzen">
-      <div class="section-heading"><span class="eyebrow">Prijzen</span><h2>Alles in één oogopslag.</h2><p>De onderstaande tarieven zijn overgenomen uit de actuele prijslijst van Montra Thai Massage.</p></div>
+      <div class="section-heading"><span class="eyebrow">Prijzen</span><h2>Alles in één oogopslag.</h2></div>
       <div class="price-table-wrap"><table class="price-table"><thead><tr><th>Behandeling</th><th>30 min</th><th>60 min</th><th>90 min</th><th>120 min</th></tr></thead><tbody>${priceRows}</tbody></table></div>
       <div class="packages-grid">${packageCards}</div>
       <section class="passes-feature" aria-label="Strippenkaart en cadeaubon">
@@ -205,10 +205,10 @@ const html = `<!doctype html>
 
     <section class="reviews-section section-pad" id="reviews">
       <div class="review-score"><span class="eyebrow">Google reviews</span><div class="score-line"><strong>${site.reviews.rating.toFixed(1)}</strong><span class="stars" aria-hidden="true">★★★★★</span></div><p>${site.reviews.count} Google reviews</p></div>
-      <div class="review-copy"><h2>Ervaringen check je rechtstreeks bij Google.</h2><p>${esc(site.reviews.text)} We tonen bewust geen losse reviewteksten die we niet zelfstandig kunnen verifiëren.</p><div class="review-actions"><a class="button button-primary" href="${esc(site.reviews.googleMapsUrl)}" target="_blank" rel="noopener">Bekijk reviews op Google</a><a class="text-link" href="${esc(site.reviews.writeReviewUrl)}" target="_blank" rel="noopener">Schrijf een review ↗</a></div></div>
+      <div class="review-copy"><h2>Ervaringen check je rechtstreeks bij Google.</h2><div class="review-actions"><a class="button button-primary" href="${esc(site.reviews.googleMapsUrl)}" target="_blank" rel="noopener">Bekijk reviews op Google</a><a class="text-link" href="${esc(site.reviews.writeReviewUrl)}" target="_blank" rel="noopener">Schrijf een review ↗</a></div></div>
     </section>
 
-    <section class="booking-band section-pad"><div><span class="eyebrow eyebrow-light">Afspraak aanvragen</span><h2>${esc(site.booking.title)}</h2><p>${esc(site.booking.text)}</p></div><button class="button button-light js-book">Afspraak maken</button></section>
+    <section class="booking-band section-pad"><div><span class="eyebrow eyebrow-light">Afspraak aanvragen</span><h2>${esc(site.booking.title)}</h2></div><button class="button button-light js-book">Afspraak maken</button></section>
 
     <section class="contact-section section-pad" id="contact">
       <div class="contact-card"><span class="eyebrow">Contact</span><h2>Montra Thai Massage</h2><a href="tel:+${site.phoneInternational}">${esc(site.phoneDisplay)}</a><a href="mailto:${esc(site.email)}">${esc(site.email)}</a><p>${esc(site.address)}</p><div class="contact-actions"><a class="button button-primary" href="https://wa.me/${site.phoneInternational}" target="_blank" rel="noopener">WhatsApp</a><a class="button button-ghost" href="${esc(site.reviews.googleMapsUrl)}" target="_blank" rel="noopener">Route plannen</a></div><div class="social-links" aria-label="Social en online profielen">${socialLinks}</div><small>KvK ${esc(site.kvk)}</small></div>
