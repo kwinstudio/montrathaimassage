@@ -1,0 +1,136 @@
+media:
+  - name: images
+    label: Websitefoto's
+    input: assets/images
+    output: /assets/images
+    extensions: [jpg, jpeg, png, webp]
+    categories: [image]
+    rename: safe
+
+content:
+  - name: website
+    label: Website instellingen
+    type: file
+    path: data/site.json
+    format: json
+    operations: {create: false, rename: false, delete: false}
+    fields:
+      - {name: businessName, label: Bedrijfsnaam, type: string, required: true}
+      - {name: tagline, label: Korte omschrijving, type: string}
+      - {name: phoneDisplay, label: Telefoonnummer zichtbaar, type: string, required: true}
+      - {name: phoneInternational, label: WhatsApp nummer zonder +, type: string, required: true}
+      - {name: email, label: E-mail, type: string, required: true}
+      - {name: address, label: Volledig adres, type: string, required: true}
+      - {name: kvk, label: KvK, type: string}
+      - {name: noEroticText, label: Dienstmelding, type: text}
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - {name: eyebrow, label: Kleine titel, type: string}
+          - {name: title, label: Hoofdtitel, type: string}
+          - {name: copy, label: Introductie, type: text}
+          - {name: primaryCta, label: Primaire knoptekst, type: string}
+          - {name: secondaryCta, label: Tweede knoptekst, type: string}
+          - {name: image, label: Hero foto, type: image, options: {media: images}}
+          - {name: imageAlt, label: Alt-tekst hero, type: string}
+      - name: trust
+        label: Over Ratree
+        type: object
+        fields:
+          - {name: title, label: Titel, type: string}
+          - {name: text, label: Tekst, type: text}
+          - {name: image, label: Foto Ratree, type: image, options: {media: images}}
+          - {name: imageAlt, label: Alt-tekst, type: string}
+      - name: reviews
+        label: Google reviews
+        type: object
+        fields:
+          - {name: rating, label: Google score, type: number}
+          - {name: count, label: Aantal reviews, type: number}
+          - {name: text, label: Review-sectie tekst, type: text}
+          - {name: googleMapsUrl, label: Google Maps / reviews link, type: string}
+          - {name: writeReviewUrl, label: Review schrijven link, type: string}
+      - name: booking
+        label: Afspraakaanvraag
+        type: object
+        fields:
+          - {name: title, label: Titel, type: string}
+          - {name: text, label: Uitleg, type: text}
+          - {name: note, label: Bevestigingsmelding, type: text}
+          - {name: whatsappIntro, label: Begin WhatsApp bericht, type: text}
+          - {name: whatsappOutro, label: Einde WhatsApp bericht, type: text}
+      - name: openingHours
+        label: Openingstijden
+        type: object
+        list:
+          collapsible: {collapsed: true, summary: "{day}"}
+        fields:
+          - {name: day, label: Dag, type: string, readonly: true}
+          - {name: dayIndex, label: Dagnummer, type: number, readonly: true}
+          - {name: open, label: Open, type: boolean}
+          - {name: from, label: Vanaf, type: string}
+          - {name: to, label: Tot, type: string}
+      - name: gallery
+        label: Galerij
+        type: object
+        list:
+          collapsible: {collapsed: true, summary: "{alt}"}
+        fields:
+          - {name: src, label: Foto, type: image, options: {media: images}}
+          - {name: alt, label: Alt-tekst, type: string}
+      - name: seo
+        label: SEO
+        type: object
+        fields:
+          - {name: title, label: SEO title, type: string}
+          - {name: description, label: Meta description, type: text}
+          - {name: canonical, label: Canonical URL, type: string}
+          - {name: localKeyword, label: Belangrijkste lokale zoekterm, type: string}
+
+  - name: treatments
+    label: Behandelingen & prijzen
+    type: file
+    path: data/treatments.json
+    format: json
+    list: true
+    operations: {create: false, rename: false, delete: false}
+    fields:
+      - {name: id, label: Technische ID, type: string, readonly: true}
+      - {name: name, label: Naam, type: string, required: true}
+      - {name: shortName, label: Korte naam prijstabel, type: string}
+      - {name: description, label: Omschrijving, type: text}
+      - {name: image, label: Foto, type: image, options: {media: images}}
+      - {name: imageAlt, label: Alt-tekst, type: string}
+      - {name: active, label: Tonen op website, type: boolean}
+      - {name: category, label: Keuzehulp categorie, type: string, readonly: true}
+      - {name: oil, label: Met olie, type: boolean, readonly: true}
+      - {name: pressure, label: Drukniveau keuzehulp, type: string, readonly: true}
+      - name: durations
+        label: Duur en prijs
+        type: object
+        list:
+          collapsible: {collapsed: false, summary: "{minutes} min — €{price}"}
+        fields:
+          - {name: minutes, label: Minuten, type: number, required: true}
+          - {name: price, label: Prijs in euro, type: number, required: true}
+
+  - name: packages
+    label: Pakketten
+    type: file
+    path: data/packages.json
+    format: json
+    list: true
+    operations: {create: false, rename: false, delete: false}
+    fields:
+      - {name: id, label: Technische ID, type: string, readonly: true}
+      - {name: name, label: Naam, type: string}
+      - {name: price, label: Prijs, type: number}
+      - {name: duration, label: Totale duur in minuten, type: number}
+      - {name: lines, label: Inhoud regels, type: string, list: true}
+
+settings:
+  commit:
+    identity: app
+    templates:
+      update: "Website aangepast via Pages CMS: {path}"
