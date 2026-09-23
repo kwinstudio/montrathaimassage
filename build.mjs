@@ -105,20 +105,41 @@ const html = `<!doctype html>
   </header>
 
   <main id="main">
-    <section class="hero section-pad">
-      <div class="hero-copy">
-        <span class="eyebrow">${esc(site.hero.eyebrow)}</span>
-        <h1>${esc(site.hero.title)}</h1>
-        <p class="lead">${esc(site.hero.copy)}</p>
-        <div class="hero-actions">
-          <button class="button button-primary js-book">${esc(site.hero.primaryCta)}</button>
-          <a class="hero-secondary js-start-choice" href="#keuzehulp">${esc(site.hero.secondaryCta)} <span aria-hidden="true">→</span></a>
+    <section class="hero hero-immersive">
+      <img class="hero-bg" src="${esc(site.hero.image)}" alt="${esc(site.hero.imageAlt)}" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content section-pad">
+        <div class="hero-copy">
+          <span class="eyebrow">${esc(site.hero.eyebrow)}</span>
+          <h1>${esc(site.hero.title)}</h1>
+          <p class="lead">${esc(site.hero.copy)}</p>
+
+          <div class="hero-actions">
+            <button class="button button-primary js-book">${esc(site.hero.primaryCta)}</button>
+            <a class="hero-secondary js-start-choice" href="#keuzehulp">${esc(site.hero.secondaryCta)} <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="hero-trust" aria-label="Kerninformatie">
+            <span><strong>${site.reviews.rating.toFixed(1)} ★</strong> Google</span>
+            <span>Vanaf <strong>€35</strong></span>
+            <span>Zoetermeer</span>
+          </div>
         </div>
-        <div class="hero-trust"><span><strong>${site.reviews.rating.toFixed(1)}</strong> Google</span><span>Vanaf <strong>€35</strong></span><span>Zoetermeer</span></div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-image-wrap"><img src="${esc(site.hero.image)}" alt="${esc(site.hero.imageAlt)}" fetchpriority="high"></div>
-        <div class="rating-card" aria-label="Google beoordeling ${site.reviews.rating} uit 5, gebaseerd op ${site.reviews.count} reviews"><strong>${site.reviews.rating.toFixed(1)}</strong><div><span class="stars" aria-hidden="true">★★★★★</span><small>${site.reviews.count} Google reviews</small></div></div>
+
+        <div class="hero-picker" aria-label="Snelle massagekeuze">
+          <div class="hero-picker-copy">
+            <span>Wat heeft je lichaam vandaag nodig?</span>
+            <small>Kies één optie. We helpen je vanaf daar verder.</small>
+          </div>
+          <div class="hero-picker-options">
+            <button data-hero-choice="relax"><span class="hero-choice-icon" aria-hidden="true">01</span><strong>Ontspanning</strong></button>
+            <button data-hero-choice="muscles"><span class="hero-choice-icon" aria-hidden="true">02</span><strong>Spierherstel</strong></button>
+            <button data-hero-choice="upper"><span class="hero-choice-icon" aria-hidden="true">03</span><strong>Nek & rug</strong></button>
+            <button data-hero-choice="help"><span class="hero-choice-icon" aria-hidden="true">04</span><strong>Help mij kiezen</strong></button>
+          </div>
+        </div>
+
+        <a class="hero-scroll" href="#behandelingen">Bekijk behandelingen <span aria-hidden="true">↓</span></a>
       </div>
     </section>
 
