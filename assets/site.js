@@ -150,6 +150,7 @@
 
   qs('[data-load-map]')?.addEventListener('click', () => {
     const wrap = qs('[data-map]');
+    wrap.classList.add('is-loaded');
     wrap.innerHTML = `<iframe title="Google Maps locatie Montra Thai Massage" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${encodeURIComponent(site.address)}&output=embed"></iframe>`;
   });
 
