@@ -17,7 +17,7 @@ De klant past alleen content aan in `data/*.json` via Pages CMS. De layout en in
 - `.pages.yml` — CMS-velden
 - `assets/site.css` — ontwerp
 - `assets/site.js` — menu, keuzehulp, reserveringsmodal, WhatsApp, kaart en juridische modals
-- `build.mjs` — maakt de deploybare `dist/` map
+- `build.mjs` — maakt de deploybare `dist/` map: 7 pagina's per taal plus `sitemap.xml`
 
 ## Lokaal testen
 
@@ -41,3 +41,17 @@ Open daarna `http://localhost:4173`.
 - Automatisch: bezoekers waarvan de telefoon/browser niet op Nederlands staat, worden van `/` naar `/en` gestuurd (redirect in `vercel.json` op basis van `Accept-Language`). Kiest iemand zelf een taal, dan onthoudt het cookie `montra_lang` die keuze.
 - `data/ui.json` — vaste teksten van de site in beide talen.
 - `data/en.json` — Engelse vertaling van de content. Prijzen, duur, foto's, openingstijden en contactgegevens komen automatisch uit de Nederlandse bestanden. Ontbreekt een Engelse tekst, dan valt de site terug op de Nederlandse tekst.
+
+## Pagina's
+
+| Pagina | Nederlands | Engels |
+|---|---|---|
+| Home | `/` | `/en` |
+| Behandelingen | `/behandelingen` | `/en/treatments` |
+| Massagekeuze | `/massagekeuze` | `/en/massage-finder` |
+| Prijzen | `/prijzen` | `/en/prices` |
+| Over Ratree | `/over-ratree` | `/en/about` |
+| Reviews | `/reviews` | `/en/reviews` |
+| Contact | `/contact` | `/en/contact` |
+
+Paginatitels, SEO-teksten en URL's staan in `data/ui.json` onder `pages`. Verander je een URL, pas dan ook de redirects in `vercel.json` aan. De sitemap wordt automatisch gemaakt. Oude links zoals `/#prijzen` sturen vanzelf door naar de nieuwe pagina.
