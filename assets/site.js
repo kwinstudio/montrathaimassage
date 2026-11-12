@@ -1,9 +1,16 @@
 (() => {
   const data = JSON.parse(document.getElementById('site-data').textContent);
   const {site, treatments, packages} = data;
+  const T = data.t;
+
   const qs = (s, root=document) => root.querySelector(s);
   const qsa = (s, root=document) => [...root.querySelectorAll(s)];
   const euro = n => `€ ${Number(n).toFixed(0)}`;
+
+  // Taalkeuze onthouden, zodat de automatische doorverwijzing iemand niet terugstuurt.
+  qsa('.lang-switch a[data-lang]').forEach(a => a.addEventListener('click', () => {
+    document.cookie = `montra_lang=${a.dataset.lang}; path=/; max-age=31536000; SameSite=Lax`;
+  }));
 
   const stickyCta = qs('.mobile-sticky');
   const updateStickyCta = () => {
@@ -39,7 +46,7 @@
     ...activeTreatments.map(t => ({type:'treatment', id:t.id, name:t.name, durations:t.durations || []})),
     ...packages.map(p => ({type:'package', id:`package:${p.id}`, name:p.name, durations:[{minutes:p.duration,price:p.price}]}))
   ];
-  treatmentSelect.innerHTML = '<option value="">Kies behandeling</option>' + bookableItems.map(x => `<option value="${x.id}">${x.name}</option>`).join('');
+  treatmentSelect.innerHTML = `<option value="">${T.chooseTreatment}</option>` + bookableItems.map(x => `<option value="${x.id}">${x.name}</option>`).join('');
 
   const today = new Date();
   const localIso = new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
@@ -48,12 +55,12 @@
   function selectedItem(){ return bookableItems.find(x => x.id === treatmentSelect.value); }
   function updateDurations(){
     const item = selectedItem();
-    if (!item) { durationSelect.innerHTML = '<option value="">Kies eerst een behandeling</option>'; durationSelect.disabled = true; updateTimes(); return; }
+    if (!item) { durationSelect.innerHTML = `<option value="">${T.chooseTreatmentFirst}</option>`; durationSelect.disabled = true; updateTimes(); return; }
     if (!item.durations.length) {
-      durationSelect.innerHTML = '<option value="contact">Duur & tarief in overleg</option>';
+      durationSelect.innerHTML = `<option value="contact">${T.durationOnRequest}</option>`;
       durationSelect.disabled = false;
     } else {
-      durationSelect.innerHTML = '<option value="">Kies duur</option>' + item.durations.map(d => `<option value="${d.minutes}" data-price="${d.price}">${d.minutes} minuten · ${euro(d.price)}</option>`).join('');
+      durationSelect.innerHTML = `<option value="">${T.chooseDuration}</option>` + item.durations.map(d => `<option value="${d.minutes}" data-price="${d.price}">${d.minutes} ${T.minutes} · ${euro(d.price)}</option>`).join('');
       durationSelect.disabled = false;
     }
     updateTimes();
@@ -64,19 +71,19 @@
   function updateTimes(){
     status.textContent = '';
     const date = dateInput.value ? new Date(`${dateInput.value}T12:00:00`) : null;
-    if (!date) { timeSelect.innerHTML = '<option value="">Kies eerst een datum</option>'; timeSelect.disabled = true; return; }
+    if (!date) { timeSelect.innerHTML = `<option value="">${T.chooseDateFirst}</option>`; timeSelect.disabled = true; return; }
     const hours = site.openingHours.find(h => Number(h.dayIndex) === date.getDay());
-    if (!hours?.open) { timeSelect.innerHTML = '<option value="">Gesloten op deze dag</option>'; timeSelect.disabled = true; status.textContent = 'Kies een dag waarop de salon geopend is.'; return; }
+    if (!hours?.open) { timeSelect.innerHTML = `<option value="">${T.closedDay}</option>`; timeSelect.disabled = true; status.textContent = T.pickOpenDay; return; }
     const item = selectedItem();
     const durationVal = durationSelect.value;
     const duration = Number(durationVal) || 30;
     let start = toMin(hours.from), end = toMin(hours.to);
     const slots = [];
     for (let t=start; t+duration<=end; t+=30) slots.push(minToTime(t));
-    if (!slots.length) { timeSelect.innerHTML = '<option value="">Geen passend tijdslot</option>'; timeSelect.disabled=true; return; }
-    timeSelect.innerHTML = '<option value="">Kies gewenste tijd</option>'+slots.map(t=>`<option value="${t}">${t}</option>`).join('');
+    if (!slots.length) { timeSelect.innerHTML = `<option value="">${T.noSlot}</option>`; timeSelect.disabled=true; return; }
+    timeSelect.innerHTML = `<option value="">${T.chooseTime}</option>`+slots.map(t=>`<option value="${t}">${t}</option>`).join('');
     timeSelect.disabled = false;
-    if (item && !item.durations.length) status.textContent = 'Voor deze behandeling worden duur en tarief vooraf afgestemd.';
+    if (item && !item.durations.length) status.textContent = T.agreedFirst;
   }
   treatmentSelect.addEventListener('change', updateDurations);
   durationSelect.addEventListener('change', updateTimes);
@@ -102,13 +109,13 @@
   qs('#booking-form').addEventListener('submit', e => {
     e.preventDefault(); status.textContent = '';
     const item = selectedItem();
-    if (!item || !dateInput.value || !timeSelect.value || !nameInput.value.trim()) { status.textContent='Vul behandeling, datum, tijd en naam in.'; return; }
+    if (!item || !dateInput.value || !timeSelect.value || !nameInput.value.trim()) { status.textContent=T.fillAll; return; }
     const durationOption = durationSelect.options[durationSelect.selectedIndex];
-    const durationText = durationSelect.value === 'contact' ? 'In overleg' : `${durationSelect.value} minuten`;
-    const priceText = durationSelect.value === 'contact' ? 'In overleg' : euro(durationOption?.dataset.price || 0);
+    const durationText = durationSelect.value === 'contact' ? T.onRequest : `${durationSelect.value} ${T.minutes}`;
+    const priceText = durationSelect.value === 'contact' ? T.onRequest : euro(durationOption?.dataset.price || 0);
     const [y,m,d] = dateInput.value.split('-');
-    const lines = [site.booking.whatsappIntro,'',`Behandeling: ${item.name}`,`Duur: ${durationText}`,`Prijs: ${priceText}`,`Datum: ${d}-${m}-${y}`,`Tijd: ${timeSelect.value}`,`Naam: ${nameInput.value.trim()}`];
-    if (noteInput.value.trim()) lines.push(`Opmerking: ${noteInput.value.trim()}`);
+    const lines = [site.booking.whatsappIntro,'',`${T.waTreatment}: ${item.name}`,`${T.waDuration}: ${durationText}`,`${T.waPrice}: ${priceText}`,`${T.waDate}: ${d}-${m}-${y}`,`${T.waTime}: ${timeSelect.value}`,`${T.waName}: ${nameInput.value.trim()}`];
+    if (noteInput.value.trim()) lines.push(`${T.waNote}: ${noteInput.value.trim()}`);
     lines.push('',site.booking.whatsappOutro);
     window.open(`https://wa.me/${site.phoneInternational}?text=${encodeURIComponent(lines.join('\n'))}`,'_blank','noopener');
   });
@@ -119,14 +126,14 @@
     const image = qs('#treatment-detail-image');
     image.src = t.image;
     image.alt = t.imageAlt || t.name;
-    qs('#treatment-detail-type').textContent = t.typeLabel || 'Behandeling';
+    qs('#treatment-detail-type').textContent = t.typeLabel || T.treatment;
     qs('#treatment-detail-title').textContent = t.name;
     qs('#treatment-detail-description').textContent = t.description;
     qs('#treatment-detail-best').textContent = t.bestFor || '';
-    qs('#treatment-detail-facts').innerHTML = `<span><b>Intensiteit</b>${t.intensity || 'Afgestemd'}</span><span><b>Olie</b>${t.oilLabel || 'In overleg'}</span>`;
+    qs('#treatment-detail-facts').innerHTML = `<span><b>${T.intensity}</b>${t.intensity || T.tailored}</span><span><b>${T.oil}</b>${t.oilLabel || T.onRequest}</span>`;
     qs('#treatment-detail-prices').innerHTML = t.durations?.length
       ? t.durations.map(d => `<span><b>${d.minutes} min</b>${euro(d.price)}</span>`).join('')
-      : '<span><b>Duur & tarief</b>In overleg</span>';
+      : `<span><b>${T.durationPrice}</b>${T.onRequest}</span>`;
     const book = qs('#treatment-detail-book');
     book.dataset.treatment = t.id;
     treatmentModal.showModal();
@@ -142,8 +149,7 @@
 
   qsa('[data-legal]').forEach(btn => btn.addEventListener('click', () => {
     const key = btn.dataset.legal;
-    const titles = {terms:'Algemene voorwaarden',privacy:'Privacy & cookies',cancellation:'Annuleren & afspraken',business:'Bedrijfsgegevens'};
-    qs('#legal-title').textContent = titles[key];
+    qs('#legal-title').textContent = btn.textContent.trim();
     qs('#legal-content').innerHTML = qs(`#${key}-template`).innerHTML;
     legalModal.showModal(); document.body.classList.add('modal-open');
   }));
@@ -151,7 +157,7 @@
   qs('[data-load-map]')?.addEventListener('click', () => {
     const wrap = qs('[data-map]');
     wrap.classList.add('is-loaded');
-    wrap.innerHTML = `<iframe title="Google Maps locatie Montra Thai Massage" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${encodeURIComponent(site.address)}&output=embed"></iframe>`;
+    wrap.innerHTML = `<iframe title="${T.mapTitle || 'Google Maps'}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=${encodeURIComponent(site.address)}&output=embed"></iframe>`;
   });
 
   const helper = qs('[data-choice-helper]');
@@ -159,38 +165,7 @@
   const stepEl = qs('[data-step]', helper);
   const progress = qs('[data-progress]', helper);
   const answers = {};
-  const questions = [
-    {key:'goal', title:'Waar heb je behoefte aan?', options:[
-      ['relax','Ontspannen',''],
-      ['muscles','Spieren losmaken',''],
-      ['mobility','Meer bewegen',''],
-      ['upper','Nek, rug & schouders','']
-    ]},
-    {key:'area', title:'Waar wil je vooral aandacht voor?', options:[
-      ['full','Hele lichaam',''],
-      ['upper','Nek, rug & schouders',''],
-      ['legs','Benen & sportspieren',''],
-      ['head','Hoofd & nek','']
-    ]},
-    {key:'pressure', title:'Hoe stevig mag de massage zijn?', options:[
-      ['soft','Zacht',''],
-      ['medium','Gemiddeld',''],
-      ['firm','Stevig',''],
-      ['either','Geen voorkeur','']
-    ]},
-    {key:'oil', title:'Heb je voorkeur voor olie?', options:[
-      ['yes','Met olie',''],
-      ['no','Zonder olie',''],
-      ['either','Maakt niet uit',''],
-      ['unsure','Weet ik niet','']
-    ]},
-    {key:'context', title:'Wat past het beste bij vandaag?', options:[
-      ['desk','Veel zitten',''],
-      ['sport','Sport / fysieke belasting',''],
-      ['stress','Stress / behoefte aan rust',''],
-      ['traditional','Thaise technieken ervaren','']
-    ]}
-  ];
+  const questions = T.questions;
   let step=0;
 
   function resetChoice(){
@@ -203,7 +178,7 @@
     const q=questions[step];
     stepEl.textContent=String(step+1);
     progress.style.width=`${((step+1)/questions.length)*100}%`;
-    helperContent.innerHTML=`<div class="choice-question"><h3>${q.title}</h3><div class="choice-options">${q.options.map(([v,l,s])=>`<button type="button" class="choice-option" data-value="${v}"><strong>${l}</strong>${s ? `<span>${s}</span>` : ''}</button>`).join('')}</div></div>`;
+    helperContent.innerHTML=`<div class="choice-question"><h3>${q.title}</h3><div class="choice-options">${q.options.map(([v,l,s=''])=>`<button type="button" class="choice-option" data-value="${v}"><strong>${l}</strong>${s ? `<span>${s}</span>` : ''}</button>`).join('')}</div></div>`;
     qsa('.choice-option',helperContent).forEach(btn=>btn.addEventListener('click',()=>{
       answers[q.key]=btn.dataset.value;
       step++;
@@ -260,7 +235,7 @@
     progress.style.width='100%';
     const t=chooseResult();
     const special=t.id==='oncology';
-    helperContent.innerHTML=`<div class="choice-result"><span class="eyebrow">${special?'Eerst persoonlijk afstemmen':'Jouw beste match'}</span><h3>${t.name}</h3><div class="result-type">${t.typeLabel || ''}</div><div class="result-card"><p>${t.description}</p><div class="result-facts"><span>${t.intensity || ''}</span><span>${t.oilLabel || ''}</span></div></div><p><small>${special?'Bespreek je situatie eerst met Ratree. Deze keuzehulp geeft geen medisch advies.':'Deze suggestie is gebaseerd op je vijf antwoorden en is geen medische diagnose.'}</small></p><div class="choice-result-actions"><button class="button button-primary" id="choice-book">${special?'Neem contact op':'Afspraak aanvragen'}</button><button class="button button-ghost" id="choice-detail">Bekijk behandeling</button><button class="text-link" id="choice-restart">Opnieuw kiezen</button></div></div>`;
+    helperContent.innerHTML=`<div class="choice-result"><span class="eyebrow">${special?T.resultSpecial:T.resultMatch}</span><h3>${t.name}</h3><div class="result-type">${t.typeLabel || ''}</div><div class="result-card"><p>${t.description}</p><div class="result-facts"><span>${t.intensity || ''}</span><span>${t.oilLabel || ''}</span></div></div><p><small>${special?T.resultSpecialNote:T.resultNote}</small></p><div class="choice-result-actions"><button class="button button-primary" id="choice-book">${special?T.contactUs:T.requestAppointment}</button><button class="button button-ghost" id="choice-detail">${T.viewTreatment}</button><button class="text-link" id="choice-restart">${T.restart}</button></div></div>`;
     qs('#choice-book').addEventListener('click',()=>openBooking(t.id));
     qs('#choice-detail').addEventListener('click',()=>openTreatmentDetail(t.id));
     qs('#choice-restart').addEventListener('click',resetChoice);

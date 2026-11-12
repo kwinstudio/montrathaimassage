@@ -1,0 +1,546 @@
+{
+  "nl": {
+    "htmlLang": "nl",
+    "ogLocale": "nl_NL",
+    "skip": "Naar inhoud",
+    "brandAria": "Ga naar de homepage van Montra Thai Massage",
+    "navAria": "Hoofdnavigatie",
+    "navTreatments": "Behandelingen",
+    "navChoice": "Massagekeuze",
+    "navPrices": "Prijzen",
+    "navReviews": "Reviews",
+    "navContact": "Contact",
+    "navAbout": "Over Ratree",
+    "navContactLocation": "Contact & locatie",
+    "langAria": "Taal kiezen",
+    "book": "Afspraak maken",
+    "menuOpen": "Menu openen",
+    "viewAria": "Bekijk {name}",
+    "massage": "Massage",
+    "fromLower": "vanaf",
+    "fromUpper": "Vanaf",
+    "onRequest": "In overleg",
+    "tailored": "Afgestemd",
+    "viewTreatment": "Bekijk behandeling",
+    "bookShort": "Afspraak",
+    "durationsOnRequest": "Tarief en duur in overleg",
+    "package": "Pakket",
+    "minutes": "minuten",
+    "requestAppointment": "Afspraak aanvragen",
+    "closed": "Gesloten",
+    "days": [
+      "Zondag",
+      "Maandag",
+      "Dinsdag",
+      "Woensdag",
+      "Donderdag",
+      "Vrijdag",
+      "Zaterdag"
+    ],
+    "heroTrustAria": "Kerninformatie",
+    "scrollTreatments": "Bekijk behandelingen",
+    "treatmentsEyebrow": "Behandelingen",
+    "treatmentsTitle": "Zeven behandelingen. Elk met een ander doel.",
+    "choiceEyebrow": "Persoonlijke massagekeuze",
+    "choiceTitle": "In vijf vragen naar jouw beste match.",
+    "question": "Vraag",
+    "of": "van",
+    "pricesEyebrow": "Prijzen",
+    "pricesTitle": "Alles in één oogopslag.",
+    "treatment": "Behandeling",
+    "passesAria": "Strippenkaart en cadeaubon",
+    "passesEyebrow": "Strippenkaart & cadeaubon",
+    "passesTitle": "Voordelig vaker komen of cadeau geven.",
+    "passKicker": "Strippenkaart",
+    "pass5": "5× 60 minuten",
+    "pass10": "10× 60 minuten",
+    "passValid": "12 maanden geldig",
+    "passLink": "Vraag aan via WhatsApp →",
+    "giftKicker": "Cadeaubon",
+    "giftTitle": "Massage cadeau geven",
+    "giftPrice": "Op aanvraag",
+    "giftNote": "Vraag Montra naar de mogelijkheden",
+    "waPass5": "Hallo Montra Thai Massage, ik heb interesse in de strippenkaart van 5× 60 minuten voor €300. Kun je mij hierover meer informatie geven?",
+    "waPass10": "Hallo Montra Thai Massage, ik heb interesse in de strippenkaart van 10× 60 minuten voor €585. Kun je mij hierover meer informatie geven?",
+    "waGift": "Hallo Montra Thai Massage, ik heb interesse in een cadeaubon. Kun je mij vertellen welke mogelijkheden er zijn?",
+    "aboutEyebrow": "Over Montra",
+    "trustPoints": [
+      [
+        "Authentieke technieken",
+        "Traditionele Thaise technieken vormen de basis, met aandacht voor jouw persoonlijke voorkeuren."
+      ],
+      [
+        "Rustige setting",
+        "Een professionele behandeling in een rustige omgeving, met respect voor jouw grenzen en comfort."
+      ],
+      [
+        "Van ontspanning tot stevig",
+        "Van Thai Oil en Traditional Thai tot Deep Tissue, sportmassage en gerichte behandelingen."
+      ]
+    ],
+    "galleryEyebrow": "Sfeer",
+    "galleryTitle": "Een rustige indruk van Montra.",
+    "reviewsCount": "{n} Google reviews",
+    "reviewsTitle": "Ervaringen check je rechtstreeks bij Google.",
+    "reviewsView": "Bekijk reviews op Google",
+    "reviewsWrite": "Schrijf een review ↗",
+    "bookingEyebrow": "Afspraak aanvragen",
+    "contactEyebrow": "Contact",
+    "directions": "Route plannen",
+    "socialAria": "Social en online profielen",
+    "kvk": "KvK",
+    "hoursEyebrow": "Openingstijden",
+    "hoursNote": "Afspraak gewenst? Vraag eerst een moment aan; de salon bevestigt de beschikbaarheid.",
+    "loadMap": "Kaart laden",
+    "mapNote": "Google Maps wordt pas geladen na jouw keuze.",
+    "mapTitle": "Google Maps locatie Montra Thai Massage",
+    "legalTitles": {
+      "terms": "Algemene voorwaarden",
+      "privacy": "Privacy & cookies",
+      "cancellation": "Annuleren & afspraken",
+      "business": "Bedrijfsgegevens"
+    },
+    "close": "Sluiten",
+    "bookingModalEyebrow": "Afspraakaanvraag",
+    "bookingModalTitle": "Kies je gewenste moment.",
+    "fieldTreatment": "Behandeling",
+    "fieldDuration": "Duur",
+    "fieldDate": "Datum",
+    "fieldTime": "Gewenste tijd",
+    "fieldName": "Naam",
+    "fieldNote": "Opmerking",
+    "optional": "optioneel",
+    "namePlaceholder": "Jouw naam",
+    "notePlaceholder": "Bijvoorbeeld voorkeur voor druk of aandachtspunt",
+    "submit": "Verder via WhatsApp",
+    "fineprint": "Je aanvraag is pas definitief nadat Montra Thai Massage via WhatsApp heeft bevestigd.",
+    "bestFor": "Past vooral bij",
+    "legalEyebrow": "Informatie",
+    "cancellationHtml": "<section><h3>Afspraak aanvragen</h3><p>Een gekozen moment op deze website is een aanvraag. Montra Thai Massage bevestigt via WhatsApp of het tijdstip beschikbaar is.</p></section><section><h3>Annuleren</h3><p>Bij annulering minder dan 24 uur voor de afspraak behoudt Montra Thai Massage zich het recht voor om kosten in rekening te brengen.</p><p>Bij te late aankomst kan de behandeling worden ingekort zonder prijsreductie.</p></section>",
+    "businessHeading": "Bedrijfsgegevens",
+    "phone": "Telefoon",
+    "email": "E-mail",
+    "serviceHeading": "Dienstverlening",
+    "serviceText": "Professionele Thaise massagebehandelingen voor ontspanning en welzijn. Geen erotische en/of seksuele diensten.",
+    "js": {
+      "chooseTreatment": "Kies behandeling",
+      "chooseTreatmentFirst": "Kies eerst een behandeling",
+      "durationOnRequest": "Duur & tarief in overleg",
+      "chooseDuration": "Kies duur",
+      "minutes": "minuten",
+      "chooseDateFirst": "Kies eerst een datum",
+      "closedDay": "Gesloten op deze dag",
+      "pickOpenDay": "Kies een dag waarop de salon geopend is.",
+      "noSlot": "Geen passend tijdslot",
+      "chooseTime": "Kies gewenste tijd",
+      "agreedFirst": "Voor deze behandeling worden duur en tarief vooraf afgestemd.",
+      "fillAll": "Vul behandeling, datum, tijd en naam in.",
+      "onRequest": "In overleg",
+      "waTreatment": "Behandeling",
+      "waDuration": "Duur",
+      "waPrice": "Prijs",
+      "waDate": "Datum",
+      "waTime": "Tijd",
+      "waName": "Naam",
+      "waNote": "Opmerking",
+      "treatment": "Behandeling",
+      "intensity": "Intensiteit",
+      "oil": "Olie",
+      "tailored": "Afgestemd",
+      "durationPrice": "Duur & tarief",
+      "resultSpecial": "Eerst persoonlijk afstemmen",
+      "resultMatch": "Jouw beste match",
+      "resultSpecialNote": "Bespreek je situatie eerst met Ratree. Deze keuzehulp geeft geen medisch advies.",
+      "resultNote": "Deze suggestie is gebaseerd op je vijf antwoorden en is geen medische diagnose.",
+      "contactUs": "Neem contact op",
+      "requestAppointment": "Afspraak aanvragen",
+      "viewTreatment": "Bekijk behandeling",
+      "restart": "Opnieuw kiezen",
+      "questions": [
+        {
+          "key": "goal",
+          "title": "Waar heb je behoefte aan?",
+          "options": [
+            [
+              "relax",
+              "Ontspannen"
+            ],
+            [
+              "muscles",
+              "Spieren losmaken"
+            ],
+            [
+              "mobility",
+              "Meer bewegen"
+            ],
+            [
+              "upper",
+              "Nek, rug & schouders"
+            ]
+          ]
+        },
+        {
+          "key": "area",
+          "title": "Waar wil je vooral aandacht voor?",
+          "options": [
+            [
+              "full",
+              "Hele lichaam"
+            ],
+            [
+              "upper",
+              "Nek, rug & schouders"
+            ],
+            [
+              "legs",
+              "Benen & sportspieren"
+            ],
+            [
+              "head",
+              "Hoofd & nek"
+            ]
+          ]
+        },
+        {
+          "key": "pressure",
+          "title": "Hoe stevig mag de massage zijn?",
+          "options": [
+            [
+              "soft",
+              "Zacht"
+            ],
+            [
+              "medium",
+              "Gemiddeld"
+            ],
+            [
+              "firm",
+              "Stevig"
+            ],
+            [
+              "either",
+              "Geen voorkeur"
+            ]
+          ]
+        },
+        {
+          "key": "oil",
+          "title": "Heb je voorkeur voor olie?",
+          "options": [
+            [
+              "yes",
+              "Met olie"
+            ],
+            [
+              "no",
+              "Zonder olie"
+            ],
+            [
+              "either",
+              "Maakt niet uit"
+            ],
+            [
+              "unsure",
+              "Weet ik niet"
+            ]
+          ]
+        },
+        {
+          "key": "context",
+          "title": "Wat past het beste bij vandaag?",
+          "options": [
+            [
+              "desk",
+              "Veel zitten"
+            ],
+            [
+              "sport",
+              "Sport / fysieke belasting"
+            ],
+            [
+              "stress",
+              "Stress / behoefte aan rust"
+            ],
+            [
+              "traditional",
+              "Thaise technieken ervaren"
+            ]
+          ]
+        }
+      ],
+      "mapTitle": "Google Maps locatie Montra Thai Massage"
+    }
+  },
+  "en": {
+    "htmlLang": "en",
+    "ogLocale": "en_GB",
+    "skip": "Skip to content",
+    "brandAria": "Go to the Montra Thai Massage homepage",
+    "navAria": "Main navigation",
+    "navTreatments": "Treatments",
+    "navChoice": "Massage finder",
+    "navPrices": "Prices",
+    "navReviews": "Reviews",
+    "navContact": "Contact",
+    "navAbout": "About Ratree",
+    "navContactLocation": "Contact & location",
+    "langAria": "Choose language",
+    "book": "Book now",
+    "menuOpen": "Open menu",
+    "viewAria": "View {name}",
+    "massage": "Massage",
+    "fromLower": "from",
+    "fromUpper": "From",
+    "onRequest": "On request",
+    "tailored": "Tailored to you",
+    "viewTreatment": "View treatment",
+    "bookShort": "Book",
+    "durationsOnRequest": "Price and duration on request",
+    "package": "Package",
+    "minutes": "minutes",
+    "requestAppointment": "Request appointment",
+    "closed": "Closed",
+    "days": [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    "heroTrustAria": "Key information",
+    "scrollTreatments": "View treatments",
+    "treatmentsEyebrow": "Treatments",
+    "treatmentsTitle": "Seven treatments. Each with its own purpose.",
+    "choiceEyebrow": "Personal massage finder",
+    "choiceTitle": "Five questions to your best match.",
+    "question": "Question",
+    "of": "of",
+    "pricesEyebrow": "Prices",
+    "pricesTitle": "Everything at a glance.",
+    "treatment": "Treatment",
+    "passesAria": "Multi-session pass and gift voucher",
+    "passesEyebrow": "Session pass & gift voucher",
+    "passesTitle": "Come more often for less, or give it as a gift.",
+    "passKicker": "Session pass",
+    "pass5": "5× 60 minutes",
+    "pass10": "10× 60 minutes",
+    "passValid": "Valid for 12 months",
+    "passLink": "Request via WhatsApp →",
+    "giftKicker": "Gift voucher",
+    "giftTitle": "Give a massage as a gift",
+    "giftPrice": "On request",
+    "giftNote": "Ask Montra about the options",
+    "waPass5": "Hello Montra Thai Massage, I'm interested in the session pass of 5× 60 minutes for €300. Could you give me more information?",
+    "waPass10": "Hello Montra Thai Massage, I'm interested in the session pass of 10× 60 minutes for €585. Could you give me more information?",
+    "waGift": "Hello Montra Thai Massage, I'm interested in a gift voucher. Could you tell me what the options are?",
+    "aboutEyebrow": "About Montra",
+    "trustPoints": [
+      [
+        "Authentic techniques",
+        "Traditional Thai techniques are the foundation, with attention to your personal preferences."
+      ],
+      [
+        "A calm setting",
+        "A professional treatment in a quiet space, with respect for your boundaries and comfort."
+      ],
+      [
+        "From relaxing to firm",
+        "From Thai Oil and Traditional Thai to Deep Tissue, sports massage and targeted treatments."
+      ]
+    ],
+    "galleryEyebrow": "Atmosphere",
+    "galleryTitle": "A calm impression of Montra.",
+    "reviewsCount": "{n} Google reviews",
+    "reviewsTitle": "Read real experiences directly on Google.",
+    "reviewsView": "View reviews on Google",
+    "reviewsWrite": "Write a review ↗",
+    "bookingEyebrow": "Request an appointment",
+    "contactEyebrow": "Contact",
+    "directions": "Get directions",
+    "socialAria": "Social and online profiles",
+    "kvk": "Chamber of Commerce (KvK)",
+    "hoursEyebrow": "Opening hours",
+    "hoursNote": "Want an appointment? Request a time first; the salon will confirm availability.",
+    "loadMap": "Load map",
+    "mapNote": "Google Maps only loads once you choose to.",
+    "mapTitle": "Google Maps location of Montra Thai Massage",
+    "legalTitles": {
+      "terms": "Terms and conditions",
+      "privacy": "Privacy & cookies",
+      "cancellation": "Cancellations & appointments",
+      "business": "Company details"
+    },
+    "close": "Close",
+    "bookingModalEyebrow": "Appointment request",
+    "bookingModalTitle": "Choose your preferred time.",
+    "fieldTreatment": "Treatment",
+    "fieldDuration": "Duration",
+    "fieldDate": "Date",
+    "fieldTime": "Preferred time",
+    "fieldName": "Name",
+    "fieldNote": "Note",
+    "optional": "optional",
+    "namePlaceholder": "Your name",
+    "notePlaceholder": "For example your preferred pressure or an area to focus on",
+    "submit": "Continue via WhatsApp",
+    "fineprint": "Your request is only final once Montra Thai Massage has confirmed it via WhatsApp.",
+    "bestFor": "Best suited for",
+    "legalEyebrow": "Information",
+    "cancellationHtml": "<section><h3>Requesting an appointment</h3><p>A time you choose on this website is a request. Montra Thai Massage will confirm via WhatsApp whether that time is available.</p></section><section><h3>Cancellations</h3><p>If you cancel less than 24 hours before your appointment, Montra Thai Massage reserves the right to charge a fee.</p><p>If you arrive late, the treatment may be shortened without a reduction in price.</p></section>",
+    "businessHeading": "Company details",
+    "phone": "Phone",
+    "email": "Email",
+    "serviceHeading": "Services",
+    "serviceText": "Professional Thai massage treatments for relaxation and wellbeing. No erotic and/or sexual services.",
+    "js": {
+      "chooseTreatment": "Choose treatment",
+      "chooseTreatmentFirst": "Choose a treatment first",
+      "durationOnRequest": "Duration & price on request",
+      "chooseDuration": "Choose duration",
+      "minutes": "minutes",
+      "chooseDateFirst": "Choose a date first",
+      "closedDay": "Closed on this day",
+      "pickOpenDay": "Please choose a day when the salon is open.",
+      "noSlot": "No suitable time slot",
+      "chooseTime": "Choose preferred time",
+      "agreedFirst": "For this treatment, duration and price are agreed in advance.",
+      "fillAll": "Please fill in treatment, date, time and name.",
+      "onRequest": "On request",
+      "waTreatment": "Treatment",
+      "waDuration": "Duration",
+      "waPrice": "Price",
+      "waDate": "Date",
+      "waTime": "Time",
+      "waName": "Name",
+      "waNote": "Note",
+      "treatment": "Treatment",
+      "intensity": "Intensity",
+      "oil": "Oil",
+      "tailored": "Tailored to you",
+      "durationPrice": "Duration & price",
+      "resultSpecial": "Let's discuss this personally first",
+      "resultMatch": "Your best match",
+      "resultSpecialNote": "Please discuss your situation with Ratree first. This finder does not give medical advice.",
+      "resultNote": "This suggestion is based on your five answers and is not a medical diagnosis.",
+      "contactUs": "Get in touch",
+      "requestAppointment": "Request appointment",
+      "viewTreatment": "View treatment",
+      "restart": "Start again",
+      "questions": [
+        {
+          "key": "goal",
+          "title": "What do you need most?",
+          "options": [
+            [
+              "relax",
+              "To relax"
+            ],
+            [
+              "muscles",
+              "Loosen tight muscles"
+            ],
+            [
+              "mobility",
+              "Move more freely"
+            ],
+            [
+              "upper",
+              "Neck, back & shoulders"
+            ]
+          ]
+        },
+        {
+          "key": "area",
+          "title": "Where would you like the focus?",
+          "options": [
+            [
+              "full",
+              "Full body"
+            ],
+            [
+              "upper",
+              "Neck, back & shoulders"
+            ],
+            [
+              "legs",
+              "Legs & sports muscles"
+            ],
+            [
+              "head",
+              "Head & neck"
+            ]
+          ]
+        },
+        {
+          "key": "pressure",
+          "title": "How firm may the massage be?",
+          "options": [
+            [
+              "soft",
+              "Gentle"
+            ],
+            [
+              "medium",
+              "Medium"
+            ],
+            [
+              "firm",
+              "Firm"
+            ],
+            [
+              "either",
+              "No preference"
+            ]
+          ]
+        },
+        {
+          "key": "oil",
+          "title": "Do you prefer oil?",
+          "options": [
+            [
+              "yes",
+              "With oil"
+            ],
+            [
+              "no",
+              "Without oil"
+            ],
+            [
+              "either",
+              "Doesn't matter"
+            ],
+            [
+              "unsure",
+              "Not sure"
+            ]
+          ]
+        },
+        {
+          "key": "context",
+          "title": "What fits you best today?",
+          "options": [
+            [
+              "desk",
+              "Lots of sitting"
+            ],
+            [
+              "sport",
+              "Sport / physical strain"
+            ],
+            [
+              "stress",
+              "Stress / need for calm"
+            ],
+            [
+              "traditional",
+              "Experience Thai techniques"
+            ]
+          ]
+        }
+      ],
+      "mapTitle": "Google Maps location of Montra Thai Massage"
+    }
+  }
+}

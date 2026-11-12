@@ -1,0 +1,136 @@
+{
+  "businessName": "Montra Thai Massage",
+  "tagline": "Professionele Thaise massage in Zoetermeer",
+  "phoneDisplay": "06 23 24 99 25",
+  "phoneInternational": "31623249925",
+  "email": "info@montrathaimassage.nl",
+  "address": "Poortugaalstraat 51, 2729 HB Zoetermeer",
+  "kvk": "93738390",
+  "noEroticText": "Montra Thai Massage biedt geen erotische en/of seksuele diensten aan.",
+  "hero": {
+    "eyebrow": "Thaise massage in Zoetermeer",
+    "title": "Thaise massage voor rust, herstel en balans",
+    "copy": "Persoonlijke behandelingen voor ontspanning, spierherstel en gerichte aandacht waar jouw lichaam die nodig heeft.",
+    "primaryCta": "Afspraak maken",
+    "secondaryCta": "Vind mijn massage",
+    "image": "/assets/images/traditional-thai.jpg",
+    "imageAlt": "Traditionele Thaise massagebehandeling bij Montra Thai Massage in Zoetermeer"
+  },
+  "trust": {
+    "title": "Persoonlijk, professioneel en met aandacht.",
+    "text": "Bij Montra staat persoonlijke aandacht centraal. Ratree stemt iedere behandeling af op jouw wensen en op wat prettig voelt voor jouw lichaam.",
+    "image": "/assets/images/ratree.jpg",
+    "imageAlt": "Ratree, masseuse bij Montra Thai Massage Zoetermeer",
+    "secondaryText": "Je kunt kiezen uit verschillende Thaise massagetechnieken: van rustig en ontspannend tot steviger en meer gericht op specifieke spierspanning. De behandeling vindt plaats in een rustige, respectvolle setting.",
+    "closingText": "Twijfel je welke massage bij je past? Dan kun je vooraf de massagekeuze gebruiken of tijdens het contact samen afstemmen welke behandeling het meest passend is."
+  },
+  "reviews": {
+    "rating": 5,
+    "count": 30,
+    "text": "Bekijk de actuele Google-beoordeling en ervaringen van bezoekers.",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Montra+Thai+Massage+Poortugaalstraat+51+Zoetermeer",
+    "writeReviewUrl": "https://search.google.com/local/writereview?placeid=ChIJT42taffPxUcRsH1gfRQK1To"
+  },
+  "booking": {
+    "title": "Vraag je afspraak aan via WhatsApp.",
+    "text": "Kies behandeling, duur, datum en gewenst tijdstip. Je aanvraag wordt daarna als duidelijk WhatsApp-bericht klaargezet.",
+    "note": "Dit is een afspraakaanvraag. Montra Thai Massage bevestigt via WhatsApp of het gekozen moment beschikbaar is.",
+    "whatsappIntro": "Hallo Montra Thai Massage, ik wil graag een afspraak aanvragen.",
+    "whatsappOutro": "Is dit tijdstip nog beschikbaar? Ik hoor graag of jullie de afspraak kunnen bevestigen."
+  },
+  "openingHours": [
+    {
+      "day": "Maandag",
+      "dayIndex": 1,
+      "open": false,
+      "from": null,
+      "to": null
+    },
+    {
+      "day": "Dinsdag",
+      "dayIndex": 2,
+      "open": true,
+      "from": "18:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Woensdag",
+      "dayIndex": 3,
+      "open": true,
+      "from": "10:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Donderdag",
+      "dayIndex": 4,
+      "open": true,
+      "from": "18:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Vrijdag",
+      "dayIndex": 5,
+      "open": true,
+      "from": "10:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Zaterdag",
+      "dayIndex": 6,
+      "open": true,
+      "from": "10:00",
+      "to": "20:00"
+    },
+    {
+      "day": "Zondag",
+      "dayIndex": 0,
+      "open": true,
+      "from": "10:00",
+      "to": "19:00"
+    }
+  ],
+  "gallery": [
+    {
+      "src": "/assets/images/gallery-01.jpg",
+      "alt": "Sfeerbeeld van Montra Thai Massage"
+    },
+    {
+      "src": "/assets/images/gallery-02.jpg",
+      "alt": "Massageomgeving bij Montra Thai Massage"
+    },
+    {
+      "src": "/assets/images/gallery-03.jpg",
+      "alt": "Lotusbloem en hot stones als rustgevend sfeerbeeld"
+    },
+    {
+      "src": "/assets/images/gallery-04.jpg",
+      "alt": "Handdoeken, bloem en stenen in de massagesalon"
+    },
+    {
+      "src": "/assets/images/gallery-05.jpg",
+      "alt": "Sfeerbeeld uit de massagepraktijk"
+    },
+    {
+      "src": "/assets/images/gallery-06.jpg",
+      "alt": "Lotusbloem en hot stones bij Montra Thai Massage"
+    }
+  ],
+  "seo": {
+    "title": "Thaise Massage Zoetermeer | Montra Thai Massage",
+    "description": "Professionele Thaise massage in Zoetermeer bij Montra Thai Massage. Bekijk behandelingen, actuele prijzen en vraag eenvoudig een afspraak aan via WhatsApp.",
+    "canonical": "https://montrathaimassage.nl/",
+    "localKeyword": "Thaise massage Zoetermeer"
+  },
+  "socials": [
+    {
+      "label": "WhatsApp",
+      "url": "https://wa.me/31623249925",
+      "kind": "whatsapp"
+    },
+    {
+      "label": "Google",
+      "url": "https://www.google.com/maps/search/?api=1&query=Montra+Thai+Massage+Poortugaalstraat+51+Zoetermeer",
+      "kind": "google"
+    }
+  ]
+}

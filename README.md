@@ -34,3 +34,10 @@ Open daarna `http://localhost:4173`.
 2. Kopieer de bestaande salonfoto's bij voorkeur naar `assets/images/` en vervang daarna de externe afbeeldings-URL's in de JSON via Pages CMS. Zo is de nieuwe site niet afhankelijk van de oude hosting.
 3. Laat de juridische teksten door de ondernemer controleren, met name annulering, aansprakelijkheid en privacy.
 4. Controleer alle WhatsApp-, telefoon-, Maps- en e-maillinks op mobiel.
+
+## Tweetalig (NL / EN)
+
+- `/` is Nederlands, `/en` is Engels. De knop NL/EN in de header wisselt handmatig.
+- Automatisch: bezoekers waarvan de telefoon/browser niet op Nederlands staat, worden van `/` naar `/en` gestuurd (redirect in `vercel.json` op basis van `Accept-Language`). Kiest iemand zelf een taal, dan onthoudt het cookie `montra_lang` die keuze.
+- `data/ui.json` — vaste teksten van de site in beide talen.
+- `data/en.json` — Engelse vertaling van de content. Prijzen, duur, foto's, openingstijden en contactgegevens komen automatisch uit de Nederlandse bestanden. Ontbreekt een Engelse tekst, dan valt de site terug op de Nederlandse tekst.
