@@ -269,6 +269,71 @@
         }
       ],
       "mapTitle": "Google Maps locatie Montra Thai Massage"
+    },
+    "allTreatments": "Bekijk alle behandelingen",
+    "choiceTeaserEyebrow": "Massagekeuze",
+    "choiceTeaserTitle": "Twijfel je welke massage bij je past?",
+    "choiceTeaserText": "Beantwoord vijf korte vragen en krijg direct een persoonlijke suggestie.",
+    "choiceTeaserCta": "Start de massagekeuze",
+    "moreAbout": "Meer over Ratree",
+    "viewPrices": "Bekijk alle prijzen",
+    "footerNavAria": "Pagina's",
+    "navHome": "Home",
+    "pages": {
+      "home": {
+        "slug": "",
+        "nav": "Home",
+        "title": "Thaise Massage Zoetermeer | Montra Thai Massage",
+        "description": "Professionele Thaise massage in Zoetermeer bij Montra Thai Massage. Bekijk behandelingen, actuele prijzen en vraag eenvoudig een afspraak aan via WhatsApp."
+      },
+      "treatments": {
+        "slug": "behandelingen",
+        "nav": "Behandelingen",
+        "title": "Behandelingen | Montra Thai Massage Zoetermeer",
+        "description": "Traditional Thai, Thai Oil, sport-, deep tissue-, nek- en rug-, migraine- en oncologiemassage in Zoetermeer. Bekijk wat bij jou past.",
+        "eyebrow": "Behandelingen",
+        "h1": "Zeven behandelingen. Elk met een ander doel.",
+        "lead": "Van rustig en ontspannend tot stevig en gericht. Bekijk per massage wat je kunt verwachten en vraag direct een afspraak aan."
+      },
+      "choice": {
+        "slug": "massagekeuze",
+        "nav": "Massagekeuze",
+        "title": "Welke massage past bij mij? | Montra Thai Massage",
+        "description": "Beantwoord vijf korte vragen en ontdek welke Thaise massage bij jou past. Daarna vraag je direct een afspraak aan bij Montra in Zoetermeer.",
+        "eyebrow": "Persoonlijke massagekeuze",
+        "h1": "In vijf vragen naar jouw beste match.",
+        "lead": "Kies wat bij je past en krijg direct een suggestie. Twijfel je daarna nog? Ratree denkt graag met je mee."
+      },
+      "prices": {
+        "slug": "prijzen",
+        "nav": "Prijzen",
+        "title": "Prijzen Thaise massage Zoetermeer | Montra Thai Massage",
+        "description": "Actuele prijzen van alle massages bij Montra Thai Massage in Zoetermeer, plus pakketten, strippenkaarten en cadeaubonnen.",
+        "eyebrow": "Prijzen",
+        "h1": "Alles in één oogopslag.",
+        "lead": "Alle tarieven zijn inclusief btw. Liever vaker komen of iemand verrassen? Kijk dan naar de pakketten, strippenkaarten en cadeaubonnen."
+      },
+      "about": {
+        "slug": "over-ratree",
+        "nav": "Over Ratree",
+        "title": "Over Ratree | Montra Thai Massage Zoetermeer",
+        "description": "Maak kennis met Ratree van Montra Thai Massage in Zoetermeer: persoonlijke, professionele Thaise massage in een rustige setting."
+      },
+      "reviews": {
+        "slug": "reviews",
+        "nav": "Reviews",
+        "title": "Reviews | Montra Thai Massage Zoetermeer",
+        "description": "Lees de Google-reviews van Montra Thai Massage in Zoetermeer of schrijf zelf een review."
+      },
+      "contact": {
+        "slug": "contact",
+        "nav": "Contact",
+        "title": "Contact & openingstijden | Montra Thai Massage Zoetermeer",
+        "description": "Adres, openingstijden, telefoon en WhatsApp van Montra Thai Massage, Poortugaalstraat 51 in Zoetermeer.",
+        "eyebrow": "Contact & locatie",
+        "h1": "Kom langs in Zoetermeer.",
+        "lead": "Vraag je afspraak aan via WhatsApp of bel even. De salon bevestigt altijd of het gekozen moment beschikbaar is."
+      }
     }
   },
   "en": {
@@ -541,6 +606,71 @@
         }
       ],
       "mapTitle": "Google Maps location of Montra Thai Massage"
+    },
+    "allTreatments": "View all treatments",
+    "choiceTeaserEyebrow": "Massage finder",
+    "choiceTeaserTitle": "Not sure which massage suits you?",
+    "choiceTeaserText": "Answer five short questions and get a personal suggestion right away.",
+    "choiceTeaserCta": "Start the massage finder",
+    "moreAbout": "More about Ratree",
+    "viewPrices": "View all prices",
+    "footerNavAria": "Pages",
+    "navHome": "Home",
+    "pages": {
+      "home": {
+        "slug": "",
+        "nav": "Home",
+        "title": "Thai Massage Zoetermeer | Montra Thai Massage",
+        "description": "Professional Thai massage in Zoetermeer at Montra Thai Massage. View treatments and current prices, and easily request an appointment via WhatsApp."
+      },
+      "treatments": {
+        "slug": "treatments",
+        "nav": "Treatments",
+        "title": "Treatments | Montra Thai Massage Zoetermeer",
+        "description": "Traditional Thai, Thai Oil, sports, deep tissue, neck and back, migraine and oncology massage in Zoetermeer. Find the one that suits you.",
+        "eyebrow": "Treatments",
+        "h1": "Seven treatments. Each with its own purpose.",
+        "lead": "From calm and relaxing to firm and targeted. See what to expect from each massage and request an appointment straight away."
+      },
+      "choice": {
+        "slug": "massage-finder",
+        "nav": "Massage finder",
+        "title": "Which massage suits me? | Montra Thai Massage",
+        "description": "Answer five short questions and find out which Thai massage suits you. Then request an appointment at Montra in Zoetermeer right away.",
+        "eyebrow": "Personal massage finder",
+        "h1": "Five questions to your best match.",
+        "lead": "Choose what fits you and get a suggestion right away. Still unsure afterwards? Ratree is happy to help you decide."
+      },
+      "prices": {
+        "slug": "prices",
+        "nav": "Prices",
+        "title": "Thai massage prices Zoetermeer | Montra Thai Massage",
+        "description": "Current prices for all massages at Montra Thai Massage in Zoetermeer, plus packages, session passes and gift vouchers.",
+        "eyebrow": "Prices",
+        "h1": "Everything at a glance.",
+        "lead": "All rates include VAT. Want to come more often or surprise someone? Take a look at the packages, session passes and gift vouchers."
+      },
+      "about": {
+        "slug": "about",
+        "nav": "About Ratree",
+        "title": "About Ratree | Montra Thai Massage Zoetermeer",
+        "description": "Meet Ratree of Montra Thai Massage in Zoetermeer: personal, professional Thai massage in a calm setting."
+      },
+      "reviews": {
+        "slug": "reviews",
+        "nav": "Reviews",
+        "title": "Reviews | Montra Thai Massage Zoetermeer",
+        "description": "Read the Google reviews of Montra Thai Massage in Zoetermeer or write a review yourself."
+      },
+      "contact": {
+        "slug": "contact",
+        "nav": "Contact",
+        "title": "Contact & opening hours | Montra Thai Massage Zoetermeer",
+        "description": "Address, opening hours, phone and WhatsApp for Montra Thai Massage, Poortugaalstraat 51 in Zoetermeer.",
+        "eyebrow": "Contact & location",
+        "h1": "Visit us in Zoetermeer.",
+        "lead": "Request your appointment via WhatsApp or give us a call. The salon always confirms whether your chosen time is available."
+      }
     }
   }
 }

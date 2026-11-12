@@ -18,7 +18,7 @@
       ]
     },
     {
-      "source": "/",
+      "source": "/((?!en|assets|data).*)",
       "headers": [
         {
           "key": "Vary",
@@ -56,6 +56,186 @@
         }
       ],
       "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/behandelingen",
+      "has": [
+        {
+          "type": "cookie",
+          "key": "montra_lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/en/treatments",
+      "permanent": false
+    },
+    {
+      "source": "/behandelingen",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "montra_lang"
+        }
+      ],
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^(?!nl)[a-zA-Z].*$"
+        }
+      ],
+      "destination": "/en/treatments",
+      "permanent": false
+    },
+    {
+      "source": "/massagekeuze",
+      "has": [
+        {
+          "type": "cookie",
+          "key": "montra_lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/en/massage-finder",
+      "permanent": false
+    },
+    {
+      "source": "/massagekeuze",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "montra_lang"
+        }
+      ],
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^(?!nl)[a-zA-Z].*$"
+        }
+      ],
+      "destination": "/en/massage-finder",
+      "permanent": false
+    },
+    {
+      "source": "/prijzen",
+      "has": [
+        {
+          "type": "cookie",
+          "key": "montra_lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/en/prices",
+      "permanent": false
+    },
+    {
+      "source": "/prijzen",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "montra_lang"
+        }
+      ],
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^(?!nl)[a-zA-Z].*$"
+        }
+      ],
+      "destination": "/en/prices",
+      "permanent": false
+    },
+    {
+      "source": "/over-ratree",
+      "has": [
+        {
+          "type": "cookie",
+          "key": "montra_lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/en/about",
+      "permanent": false
+    },
+    {
+      "source": "/over-ratree",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "montra_lang"
+        }
+      ],
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^(?!nl)[a-zA-Z].*$"
+        }
+      ],
+      "destination": "/en/about",
+      "permanent": false
+    },
+    {
+      "source": "/reviews",
+      "has": [
+        {
+          "type": "cookie",
+          "key": "montra_lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/en/reviews",
+      "permanent": false
+    },
+    {
+      "source": "/reviews",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "montra_lang"
+        }
+      ],
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^(?!nl)[a-zA-Z].*$"
+        }
+      ],
+      "destination": "/en/reviews",
+      "permanent": false
+    },
+    {
+      "source": "/contact",
+      "has": [
+        {
+          "type": "cookie",
+          "key": "montra_lang",
+          "value": "en"
+        }
+      ],
+      "destination": "/en/contact",
+      "permanent": false
+    },
+    {
+      "source": "/contact",
+      "missing": [
+        {
+          "type": "cookie",
+          "key": "montra_lang"
+        }
+      ],
+      "has": [
+        {
+          "type": "header",
+          "key": "accept-language",
+          "value": "^(?!nl)[a-zA-Z].*$"
+        }
+      ],
+      "destination": "/en/contact",
       "permanent": false
     }
   ]

@@ -12,6 +12,13 @@
     document.cookie = `montra_lang=${a.dataset.lang}; path=/; max-age=31536000; SameSite=Lax`;
   }));
 
+  // Oude links naar de one-page site (bijv. /#prijzen) doorsturen naar de nieuwe pagina.
+  const legacyId = location.hash.slice(1);
+  if (legacyId && !document.getElementById(legacyId) && data.legacyAnchors?.[legacyId]) {
+    location.replace(data.legacyAnchors[legacyId]);
+    return;
+  }
+
   const stickyCta = qs('.mobile-sticky');
   const updateStickyCta = () => {
     if (!stickyCta) return;
@@ -161,6 +168,7 @@
   });
 
   const helper = qs('[data-choice-helper]');
+  if (helper) {
   const helperContent = qs('[data-choice-content]', helper);
   const stepEl = qs('[data-step]', helper);
   const progress = qs('[data-progress]', helper);
@@ -256,4 +264,5 @@
   qsa('[data-hero-choice]').forEach(btn=>btn.addEventListener('click',()=>startChoiceFromHero(btn.dataset.heroChoice)));
   qsa('.js-start-choice').forEach(link=>link.addEventListener('click',()=>{ if(step>=questions.length) resetChoice(); }));
   renderQuestion();
+  }
 })();
