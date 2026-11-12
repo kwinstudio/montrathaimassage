@@ -1,0 +1,135 @@
+{
+  "_info": "Engelse vertaling. Prijzen, duur, foto's, openingstijden en contactgegevens komen automatisch uit de Nederlandse bestanden. Ontbreekt hier een tekst, dan toont de Engelse site de Nederlandse tekst.",
+  "site": {
+    "tagline": "Professional Thai massage in Zoetermeer",
+    "noEroticText": "Montra Thai Massage does not offer erotic and/or sexual services.",
+    "hero": {
+      "eyebrow": "Thai massage in Zoetermeer",
+      "title": "Thai massage for calm, recovery and balance",
+      "copy": "Personal treatments for relaxation, muscle recovery and focused attention wherever your body needs it.",
+      "primaryCta": "Book now",
+      "secondaryCta": "Find my massage",
+      "imageAlt": "Traditional Thai massage treatment at Montra Thai Massage in Zoetermeer"
+    },
+    "trust": {
+      "title": "Personal, professional and attentive.",
+      "text": "At Montra, personal attention comes first. Ratree tailors every treatment to your wishes and to what feels right for your body.",
+      "secondaryText": "You can choose from several Thai massage techniques: from calm and relaxing to firmer and more focused on specific muscle tension. Treatments take place in a quiet, respectful setting.",
+      "closingText": "Not sure which massage suits you? Use the massage finder beforehand, or decide together with Ratree when you get in touch.",
+      "imageAlt": "Ratree, massage therapist at Montra Thai Massage Zoetermeer"
+    },
+    "booking": {
+      "title": "Request your appointment via WhatsApp.",
+      "text": "Choose a treatment, duration, date and preferred time. Your request is then prepared as a clear WhatsApp message.",
+      "note": "This is an appointment request. Montra Thai Massage will confirm via WhatsApp whether your chosen time is available.",
+      "whatsappIntro": "Hello Montra Thai Massage, I would like to request an appointment.",
+      "whatsappOutro": "Is this time still available? I look forward to hearing whether you can confirm the appointment."
+    },
+    "galleryAlts": [
+      "Atmosphere at Montra Thai Massage",
+      "Massage room at Montra Thai Massage",
+      "Lotus flower and hot stones as a calming detail",
+      "Towels, flower and stones in the massage salon",
+      "Atmosphere at the massage practice",
+      "Lotus flower and hot stones at Montra Thai Massage"
+    ],
+    "seo": {
+      "title": "Thai Massage Zoetermeer | Montra Thai Massage",
+      "description": "Professional Thai massage in Zoetermeer at Montra Thai Massage. View treatments and current prices, and easily request an appointment via WhatsApp."
+    }
+  },
+  "treatments": {
+    "traditional-thai": {
+      "typeLabel": "Traditional · no oil",
+      "teaser": "Active and rhythmic, focused on pressure points and stretching.",
+      "description": "An energising Thai treatment with pressure point techniques and stretches. The massage works on the whole body and suits you best if you enjoy an active treatment without oil.",
+      "bestFor": "Anyone looking for traditional Thai techniques, movement and a firm but controlled treatment.",
+      "intensity": "Medium to firm",
+      "oilLabel": "Without oil",
+      "imageAlt": "Traditional Thai massage at Montra Thai Massage Zoetermeer"
+    },
+    "thai-oil": {
+      "shortName": "Thai Oil Massage",
+      "typeLabel": "Relaxation · warm oil",
+      "teaser": "Flowing movements with warm oil for deep relaxation.",
+      "description": "A relaxing massage with warm oil and calm, flowing techniques. Focused on letting go of everyday tension and creating a calm, relaxed feeling.",
+      "bestFor": "Anyone who mainly wants to relax and enjoys a gentler, flowing massage with oil.",
+      "intensity": "Gentle to medium",
+      "oilLabel": "With warm oil",
+      "imageAlt": "Thai oil massage at Montra Thai Massage Zoetermeer"
+    },
+    "thai-sport": {
+      "typeLabel": "Sport · targeted",
+      "teaser": "Stronger and targeted for hard-working muscles.",
+      "description": "A powerful, targeted treatment for muscles that take a lot from sport, training or physical work. It is more intensive than a relaxation massage.",
+      "bestFor": "Athletes and active people who deliberately choose a firmer, targeted massage.",
+      "intensity": "Firm",
+      "oilLabel": "Depends on the treatment",
+      "imageAlt": "Thai sports massage in Zoetermeer"
+    },
+    "deep-tissue": {
+      "typeLabel": "Deep · intensive",
+      "teaser": "Intensive attention for deeper muscle tension.",
+      "description": "A more intensive massage that targets deeper muscle layers and stubborn muscle tension. The pressure is more pronounced than in a relaxation massage and is adjusted to what feels comfortable and safe.",
+      "bestFor": "Anyone who enjoys firm pressure and mainly wants attention for long-lasting or deeper muscle tension.",
+      "intensity": "Firm to intensive",
+      "oilLabel": "With oil",
+      "imageAlt": "Deep tissue massage at Montra Thai Massage Zoetermeer"
+    },
+    "neck-back-shoulders": {
+      "name": "Neck, back and shoulders",
+      "shortName": "Neck, back & shoulders",
+      "typeLabel": "Targeted · upper body",
+      "teaser": "Extra attention for tension in the neck, back and shoulders.",
+      "description": "A targeted upper-body treatment with extra attention for the neck, back and shoulders. Ideal if you don't necessarily want a full-body massage but mainly want to focus on these areas.",
+      "bestFor": "Lots of sitting, office work, or when tension is mostly felt in the upper body.",
+      "intensity": "Tailored to you",
+      "oilLabel": "On request",
+      "imageAlt": "Neck, back and shoulder massage in Zoetermeer"
+    },
+    "migraine": {
+      "typeLabel": "Gentle · head & neck",
+      "teaser": "Calm attention for the head, neck and shoulders.",
+      "description": "A gentle treatment around the head, neck and shoulders using calm pressure point techniques. Intended as a relaxing massage for tension and overstimulation; it is not a medical treatment or diagnosis for migraine.",
+      "bestFor": "Anyone who wants a calm treatment focused on the head, neck and shoulders.",
+      "intensity": "Gentle",
+      "oilLabel": "Without oil",
+      "imageAlt": "Calm massage around the head, neck and shoulders"
+    },
+    "oncology": {
+      "name": "Oncology Massage",
+      "shortName": "Oncology Massage",
+      "typeLabel": "Gentle · carefully tailored",
+      "teaser": "A gentle treatment that is always discussed with you first.",
+      "description": "A gentle, carefully tailored massage for people during or after cancer treatment. Please contact Montra Thai Massage beforehand to discuss whether and how the treatment can suit your situation.",
+      "bestFor": "Only after a personal conversation with the salon. The massage finder does not replace medical advice.",
+      "intensity": "Gentle and adapted",
+      "oilLabel": "On request",
+      "imageAlt": "Gentle oncology massage at Montra Thai Massage"
+    }
+  },
+  "packages": {
+    "montra-touch": {"lines": ["60 minutes Thai Oil Massage", "30 minutes Migraine Massage"]},
+    "montra-bliss": {"lines": ["60 minutes Deep Tissue Massage", "30 minutes Neck, back and shoulders"]}
+  },
+  "legal": {
+    "terms": [
+      {"heading": "1. General", "text": ["These terms and conditions apply to all services and products offered by Montra Thai Massage. By using the services, the client agrees to these terms."]},
+      {"heading": "2. Services", "text": ["Montra Thai Massage offers professional Thai massage treatments to promote relaxation and wellbeing. The services are not intended as medical treatment or physiotherapy.", "Montra Thai Massage does not offer erotic and/or sexual services."]},
+      {"heading": "3. Appointments and cancellations", "text": ["Appointments can be requested by phone, email, WhatsApp or via the website.", "If you cancel less than 24 hours before the appointment, Montra Thai Massage reserves the right to charge a fee.", "If you arrive late, the treatment may be shortened without a reduction in price.", "Montra Thai Massage reserves the right to cancel or change an appointment if necessary."]},
+      {"heading": "4. Payments and rates", "text": ["Payment is due immediately after the treatment using the available payment methods.", "Published rates include VAT and are subject to change.", "Gift vouchers, session passes and promotions are only valid within the stated period and conditions."]},
+      {"heading": "5. Health and responsibility", "text": ["Clients must report any relevant medical conditions, pregnancy, medication or other circumstances that may affect the treatment in advance.", "Massages focus on relaxation and wellbeing and do not replace medical examination, diagnosis or treatment. If in doubt, please consult a qualified healthcare professional."]},
+      {"heading": "6. Code of conduct", "text": ["Respectful behaviour is expected from both clients and the therapist.", "Montra Thai Massage reserves the right to refuse or end a treatment in case of inappropriate behaviour."]},
+      {"heading": "7. Liability and complaints", "text": ["To the extent permitted by law, Montra Thai Massage is not liable for damage caused by relevant information not being reported in advance.", "Complaints can be submitted in writing within 7 days of the treatment. In the event of a dispute, we will first try to reach a solution together."]},
+      {"heading": "8. Changes", "text": ["Montra Thai Massage may change these terms. The most recent version is available on the website."]},
+      {"heading": "Language", "text": ["This is a translation for your convenience. In case of any difference, the Dutch version of these terms prevails."]}
+    ],
+    "privacy": [
+      {"heading": "What data is processed?", "text": ["This website has no account area and does not store the booking form. When you contact us via WhatsApp, phone or email, the details you share in that contact are processed."]},
+      {"heading": "What is the data used for?", "text": ["Contact and appointment details are used to answer questions, handle appointment requests and provide the service."]},
+      {"heading": "External services", "text": ["WhatsApp and email are subject to the terms and privacy rules of the respective provider. Google Maps is only loaded on this website after you deliberately click ‘Load map’."]},
+      {"heading": "Cookies", "text": ["The website does not place marketing cookies when you open it. If you choose a language yourself, a small functional cookie remembers that choice. External content can only load data or cookies from the external provider after your action."]},
+      {"heading": "Privacy questions", "text": ["For questions about personal data, please contact info@montrathaimassage.nl."]}
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "montra-touch",
+    "name": "Montra Touch",
+    "price": 90,
+    "duration": 90,
+    "lines": ["60 minuten Thai Oil Massage", "30 minuten Migraine Massage"]
+  },
+  {
+    "id": "montra-bliss",
+    "name": "Montra Bliss",
+    "price": 90,
+    "duration": 90,
+    "lines": ["60 minuten Deep Tissue Massage", "30 minuten Nek, rug en schouders"]
+  }
+]
